@@ -5,6 +5,9 @@
  */
 package huffman;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author FIRMAN
@@ -27,6 +30,14 @@ public class Controler {
                             man.getPohon(
                                  IO.GetAllLeaf()
                             )));
+        System.out.println(man.IndexHuffmanComp(root).get(1));
+        System.out.println(man.IndexHuffmanComp(root).get(2));
+        System.out.println(man.IndexHuffmanComp(root).get(3));
+        System.out.println(man.IndexHuffmanComp(root).get(4));
+        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("0",2)));
+        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("100",2)));
+        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("101",2)));
+        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("11",2)));
         
     }
     

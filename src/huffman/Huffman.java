@@ -6,6 +6,7 @@
 package huffman;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -17,7 +18,7 @@ import java.util.PriorityQueue;
 public class Huffman implements Comparator<Node> {
 
     private int Pointer;
-
+    private ArrayList Indexhuffman;
     //Input Node semua leaf;
     //Output Root dari tree;
 
@@ -101,23 +102,88 @@ public class Huffman implements Comparator<Node> {
                 Pointer +=8;
             } else {
 
-                Root.setLeft(StringtohuffmanTreerec(bytePohon));
+                Root.setRight(StringtohuffmanTreerec(bytePohon));
 
             }}
         
             Pointer++;
             if (bytePohon.charAt(Pointer) == '1') {
                // System.out.println(Integer.parseInt(bytePohon.substring(Pointer + 1, Pointer + 9),2));
-                Root.setRight(new Node(true, bytePohon.substring(Pointer + 1, Pointer + 9)));
+                Root.setLeft(new Node(true, bytePohon.substring(Pointer + 1, Pointer + 9)));
                 Pointer +=8;
             } else {
 
-                Root.setRight(StringtohuffmanTreerec(bytePohon));
+                Root.setLeft(StringtohuffmanTreerec(bytePohon));
 
             
         }
 
         return Root;
 
+    }
+    
+    public ArrayList<String> IndexHuffmanComp(Node root){
+            Indexhuffman =null;
+            Indexhuffman = new ArrayList<String>();
+           for(int i=0;i<257;i++){
+           Indexhuffman.add(null);
+           
+           }
+             IndexHuffmanrec( root.getRight(),"0");
+            IndexHuffmanrec( root.getLeft(),"1");
+    
+    
+            return Indexhuffman;
+    
+    
+     
+    
+    }
+    public ArrayList<String> IndexHuffmandeComp(Node root){
+            Indexhuffman =null;
+            Indexhuffman = new ArrayList<String>();
+           for(int i=0;i<257;i++){
+           Indexhuffman.add(null);
+           
+           }
+             IndexHuffmanrec2( root.getRight(),"0");
+            IndexHuffmanrec2( root.getLeft(),"1");
+    
+    
+            return Indexhuffman;
+    
+    
+     
+    
+    }
+    
+    
+    
+    
+    private void IndexHuffmanrec(Node root,String Path){
+        
+        if(root.isIsLeaf()){
+            
+         Indexhuffman.set(Integer.parseInt(root.info(),2), Path );
+        
+        }else{
+        
+        IndexHuffmanrec( root.getRight(),  Path+"0");
+        IndexHuffmanrec( root.getLeft(),  Path+"1");
+        }
+        
+    }
+        private void IndexHuffmanrec2(Node root,String Path){
+        
+        if(root.isIsLeaf()){
+            
+         Indexhuffman.set(Integer.parseInt(Path,2), root.info() );
+        System.out.println(Path);
+        }else{
+        
+        IndexHuffmanrec2( root.getRight(),  Path+"0");
+        IndexHuffmanrec2( root.getLeft(),  Path+"1");
+        }
+        
     }
 }
