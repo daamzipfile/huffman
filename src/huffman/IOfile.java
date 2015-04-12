@@ -23,15 +23,16 @@ public class IOfile {
         this.inputStream = new FileInputStream(Url);
     }
          
-        
+      // note cara in ke lambatan cari cara lain riki  
        private  int[] HexStream() throws IOException{
         long streamPtr=0;
+       // int buat naro  hitungan 
         int []Ptr =new int[256];
         for(int i=0;i<256;i++){
            Ptr[i] = 0;
     }
         while (inputStream.available() > 0) { 
-            System.out.print("a");
+           
                Ptr[inputStream.read()]++;               
     }
             return Ptr;
