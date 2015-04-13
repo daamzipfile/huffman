@@ -78,7 +78,10 @@ public class Compressor {
                res.add(new Node(Count[i],true,Integer.toBinaryString(i)));
            }
     }
-        Node[] array=(Node[])res.toArray();
+        Node[] array=new Node[res.size()];
+        for(int i=0;i<res.size();i++){
+            array[i]=res.get(i);
+        }
     return  array;
     }
 
