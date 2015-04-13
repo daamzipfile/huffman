@@ -60,6 +60,7 @@ public class Node {
         this.isLeaf = isLeaf;
         this.Parent = this;
         this.info = info;
+        
     }
     //Constructure untuk buat inner Node
     public Node(int Size, boolean isLeaf,Node right,Node left) {

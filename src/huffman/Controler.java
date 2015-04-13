@@ -5,6 +5,8 @@
  */
 package huffman;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,28 +19,26 @@ public class Controler {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        String Url="";
-        IOfile IO = new IOfile(Url);
-        Huffman man = new Huffman();  
-        /** System.out.print(man.ByteTree(
-                            man.getPohon(
-                                 IO.GetAllLeaf()
-                            ))); **/
-        Node root =man.StringtohuffmanTree(
-                        man.ByteTree(
-                            man.getPohon(
-                                 IO.GetAllLeaf()
-                            )));
-        System.out.println(man.IndexHuffmanComp(root).get(1));
-        System.out.println(man.IndexHuffmanComp(root).get(2));
-        System.out.println(man.IndexHuffmanComp(root).get(3));
-        System.out.println(man.IndexHuffmanComp(root).get(4));
-        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("0",2)));
-        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("100",2)));
-        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("101",2)));
-        System.out.println(man.IndexHuffmandeComp(root).get(Integer.parseInt("11",2)));
-        
+    public static void main(String[] args) throws IOException {
+       // cara bikin Pohon
+       Huffman man = new Huffman();
+       Node root;
+       IOfile IO = new IOfile("C:\\Users\\FIRMAN\\Desktop\\2.mp4");
+       // bikin tree
+       root =man.getPohon(IO.GetAllLeaf());
+       // tree ke binary form
+       String Pohon = man.ByteTree(root);
+       // string ke tree
+       root = man.StringtohuffmanTree(Pohon);
+       //root ke index Compress
+       // index1.get("nilai hex dalam int") nanti return string huffmannya
+       ArrayList<String> index1 = man.IndexHuffmanComp(root);
+       
+       //root ke index Compress
+       // index2.get("nilai biner hufman dalam int") nanti return String asalnya
+       ArrayList<String> index2 = man.IndexHuffmanComp(root);
+       
+       
     }
     
 }
