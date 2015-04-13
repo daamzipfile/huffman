@@ -39,16 +39,7 @@ public class IOfile {
        }
 
     //Method untuk mendapatkan Leaf Untuk hufmman
-    public Node[] GetAllLeaf() throws IOException {
-        ArrayList<Node> res = new ArrayList<Node>();
-        int[] Count = HexStream();
-        for(int i=0;i<256;i++){
-           if(Count[i] != 0){
-               res.add(new Node(Count[i],true,Integer.toBinaryString(i)));
-           }
-    }
-    return  (Node[])res.toArray();
-    }
+   
     
     
     

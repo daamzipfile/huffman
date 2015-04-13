@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -26,28 +27,59 @@ public class Compressor {
 
     byte[] data;
 
-    public void readData(String fileNama) throws FileNotFoundException, IOException {
+    public int[] readData(String fileNama) throws FileNotFoundException, IOException {
         RandomAccessFile raf = new RandomAccessFile("C:/" + fileNama, "r");
         byte b;
         byte[] isi = new byte[(int) raf.length()];
 
         raf.read(isi, 0, (int) raf.length());
         data = isi;
-    }
-    public String getByte(){
-        int a=data.length;
-        String hasil="";
-        for(int i=0;i<a;i++){
-            hasil=hasil+data[a]+" ";
+        int[] array=new int[257];
+        for(int i=1;i<257;i++){
+            array[i]=0;
         }
-        return hasil;
+        for(int i=0;i<data.length;i++){
+            array[Byte.toUnsignedInt(data[i])]++;
+        }
+        int a=0;
+        return array;
     }
+    
+    
+    
     public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
         String nama = sc.next();
         Compressor cs = new Compressor();
-        cs.readData(nama);
-        System.out.print(cs.getByte());
+       
+        Huffman man = new Huffman();
+       Node root;
+       
+       root =man.getPohon(cs.GetAllLeaf(nama));
+       // tree ke binary form
+       String Pohon = man.ByteTree(root);
+       // string ke tree
+       root = man.StringtohuffmanTree(Pohon);
+       //root ke index Compress
+       // index1.get("nilai hex dalam int") nanti return string huffmannya
+       ArrayList<String> index1 = man.IndexHuffmanComp(root);
+       
+       //root ke index Compress
+       // index2.get("nilai biner hufman dalam int") nanti return String asalnya
+       ArrayList<String> index2 = man.IndexHuffmanComp(root);
+    }
+    
+     public Node[] GetAllLeaf(String namaFile) throws IOException {
+        
+        ArrayList<Node> res = new ArrayList<Node>();
+        int[] Count = this.readData(namaFile);
+        for(int i=0;i<257;i++){
+           if(Count[i] != 0){
+               res.add(new Node(Count[i],true,Integer.toBinaryString(i)));
+           }
+    }
+        Node[] array=(Node[])res.toArray();
+    return  array;
     }
 
 }
