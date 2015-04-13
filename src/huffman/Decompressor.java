@@ -5,10 +5,22 @@
  */
 package huffman;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Date;
+
 /**
  *
  * @author RickyWahyudi
  */
 public class Decompressor {
     
+    public void readFile(String filename) throws FileNotFoundException, IOException{
+        String outputFileName =filename+".mzip";
+        RandomAccessFile raf = new RandomAccessFile(outputFileName, "rw");
+        byte [] document = new byte [ ( int) raf.length ()] ;
+        raf.readFully(document);
+        
+    }
 }
