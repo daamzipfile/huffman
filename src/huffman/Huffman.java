@@ -85,7 +85,7 @@ public class Huffman implements Comparator<Node> {
     //convert dari string biner pohon ke pohon
     //kembalian root dari pohon
     public Node StringtohuffmanTree(String bytePohon) {
-
+ 
         Pointer = 0;
         Node Root = StringtohuffmanTreerec(bytePohon);
         
