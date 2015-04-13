@@ -25,7 +25,6 @@ public class Huffman implements Comparator<Node> {
     public Node getPohon(Node[] leaf) {
         PriorityQueue que;
         que = new PriorityQueue(leaf.length, this);
-
         for (int i = 0; i < leaf.length; i++) {
             que.add(leaf[i]);
         }
