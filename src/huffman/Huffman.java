@@ -33,11 +33,11 @@ public class Huffman implements Comparator<Node> {
         Node temp = null;
         while (!que.isEmpty()) {
             Root = (Node) que.poll();
-            //System.out.println(Root.getSize());
+           // System.out.println(Root.getSize());
             if (!que.isEmpty()) {
                 temp = (Node) que.poll();
-             //   System.out.println(Root.getSize() + " " + temp.getSize());
-              //  System.out.println(Root.isIsLeaf() + " " + temp.isIsLeaf());
+               // System.out.println(Root.getSize() + " " + temp.getSize());
+               // System.out.println(Root.isIsLeaf() + " " + temp.isIsLeaf());
                 que.add(Root.Union(Root, temp));
             }
         }

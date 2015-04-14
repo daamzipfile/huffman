@@ -1,0 +1,19 @@
+#portfolio .jcarousel-skin-tango .jcarousel-prev-horizontal, 
+#portfolio .jcarousel-skin-tango .jcarousel-next-horizontal {
+    visibility: visible !important;
+}
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-horizontal:focus {
+	background-position: -390px -16px !important;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-prev-horizontal:focus {
+	background-position: -289px -16px !important;
+}
+
+
+#team .brady {
+	background-position: 0 -422px;
+}

@@ -1,0 +1,5190 @@
+/*
+Theme Name: ReignDesign 2011
+Theme URI: http://www.reigndesign.com/
+Description: The 2011 theme for ReignDesign.com 
+Author: ReignDesign
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+*/
+
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	font-family:"Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+}
+
+
+.zh html, .zh body, .zh div, .zh span, .zh applet, .zh object, .zh iframe,
+.zh h1, .zh h2, .zh h3, .zh h4, .zh h5, .zh h6, .zh p, .zh blockquote, .zh pre,
+.zh a, .zh abbr, .zh acronym, .zh address, .zh big, .zh cite, .zh code,
+.zh del, .zh dfn, .zh em, .zh font, .zh img, .zh ins, .zh kbd, .zh q, .zh s, .zh samp,
+.zh small, .zh strike, .zh strong, .zh sub, .zh sup, .zh tt, .zh var,
+.zh b, .zh u, .zh i, .zh center,
+.zh dl, .zh dt, .zh dd, .zh ol, .zh ul, .zh li,
+.zh fieldset, .zh form, .zh label, .zh legend,
+.zh table, .zh caption, .zh tbody, .zh tfoot, .zh thead, .zh tr, .zh th, .zh td  {
+	font-family:"Helvetica Neue",Arial, '宋体',sans-serif !important;
+}
+.zh #portfolio strong {
+    font-weight:normal;
+}
+
+body, html { 
+	overflow-x:hidden;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+	list-style-type: none !important;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+.clear {
+	float:left;
+	clear:both;
+	width: 100%;
+}
+
+.left {
+	float:left;
+	clear:left;
+}
+
+.right {
+	float:right;
+	clear:right;
+}
+
+/* =Layout
+-------------------------------------------------------------- */
+
+/*
+LAYOUT: Two columns
+DESCRIPTION: Two-column fixed layout with one sidebar right of content
+*/
+
+#container {
+	float: left;
+	margin: 0 -240px 0 0;
+	width: 100%;
+}
+#content {
+	margin: 0 280px 0 20px;
+}
+#primary,
+#secondary {
+    clear: right;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    width: 214px;
+	padding-top:8px; /*This is needed to make the side look aligned with the date header*/
+}
+#secondary {
+	clear: right;
+}
+#footer {
+	clear: both;
+	width: 100%;
+}
+
+/*
+LAYOUT: One column, no sidebar
+DESCRIPTION: One centered column with no sidebar
+*/
+
+.one-column #content {
+	margin: 0 auto;
+	width: 640px;
+}
+
+/*
+LAYOUT: Full width, no sidebar
+DESCRIPTION: Full width content with no sidebar; used for attachment pages
+*/
+
+.single-attachment #content {
+	margin: 0 auto;
+	width: 700px;
+}
+
+
+/* =Fonts
+-------------------------------------------------------------- */
+body,
+input,
+textarea,
+.page-title span,
+.pingback a.url {
+	font-family: "proxima-nova-1","proxima-nova-2";/*, Georgia, "Bitstream Charter", serif;*/
+}
+h3#comments-title,
+h3#reply-title,
+#access .menu,
+#access div.menu ul,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-info,
+#site-title,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text {
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+input[type=submit] {
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+code,pre,pre * {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", Courier, monospace  !important;
+}
+
+
+/* =Structure
+-------------------------------------------------------------- */
+
+/* The main theme structure */
+#access .menu-header,
+div.menu,
+#colophon,
+#branding,
+#main,
+#wrapper {
+	margin: 0 auto;
+/*	width: 940px;*/
+}
+.wrapper {
+/*	background: none repeat scroll 0 0 #FFFFFF;*/
+    margin: 0 auto;
+    width: 840px;
+/*	margin-top: 20px;*/
+/*	padding: 0 20px;*/
+}
+
+/* Structure the footer area */
+#footer-widget-area {
+	overflow: hidden;
+}
+#footer-widget-area .widget-area {
+	float: left;
+	margin-right: 20px;
+	width: 220px;
+}
+#footer-widget-area #fourth {
+	margin-right: 0;
+}
+#site-info {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	width: 700px;
+	height: 70px;
+}
+#site-copywrite {
+	float: right;
+	width: 220px;
+	height: 70px;
+}
+
+
+/* =Global Elements
+-------------------------------------------------------------- */
+
+/* Main global 'theme' and typographic styles */
+body,
+input,
+textarea {
+	color: #666;
+	font-size: 12px;
+/*	line-height: 1.3em;*/
+}
+hr {
+	background-color: #e7e7e7;
+	border: 0;
+	clear: both;
+	height: 1px;
+	margin-bottom: 18px;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 18px;
+}
+/*ul {
+	margin: 0 0 18px 1.5em;
+}
+ol {
+	list-style: decimal;
+	margin: 0 0 18px 1.5em;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 0 24px 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 18px;
+}*/
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	font-style: italic;
+}
+big {
+	font-size: 131.25%;
+}
+ins {
+	background: #ffc;
+	text-decoration: none;
+}
+blockquote {
+	font-style: italic;
+	padding: 0 3em;
+}
+blockquote cite,
+blockquote em,
+blockquote i {
+	font-style: normal;
+}
+pre {
+	background: #f7f7f7;
+	color: #222;
+	line-height: 18px;
+	margin-bottom: 18px;
+	padding: 1.5em;
+	overflow:auto;
+}
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+/*input[type="text"],
+textarea {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 2px;
+}*/
+/*a:link {
+	color: #0066cc;
+}
+a:visited {
+	color: #743399;
+}
+a:active,
+a:hover {
+	color: #ff4b33;
+}*/
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	position: absolute;
+	left: -9000px;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#header {
+	padding: 30px 0 0 0;
+}
+#site-title {
+	float: left;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px 0;
+	width: 700px;
+}
+#site-title a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+#site-description {
+	clear: right;
+	float: right;
+	font-style: italic;
+	margin: 15px 0 18px 0;
+	width: 220px;
+}
+
+/* This is the custom header image */
+#branding img {
+	border-top: 4px solid #000;
+	border-bottom: 1px solid #000;
+	display: block;
+	float: left;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access {
+	background: #000;
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 840px;
+}
+#access .menu-header,
+div.menu {
+	font-size: 13px;
+	margin-left: 12px;
+	width: 928px;
+}
+#access .menu-header ul,
+div.menu ul {
+	list-style: none;
+	margin: 0;
+}
+#access .menu-header li,
+div.menu li {
+	float: left;
+	position: relative;
+}
+#access a {
+	color: #aaa;
+	display: block;
+	line-height: 38px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+#access ul ul {
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	float: left;
+	width: 180px;
+	z-index: 99999;
+}
+#access ul ul li {
+	min-width: 180px;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	line-height: 1em;
+	padding: 10px;
+	width: 160px;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #333;
+	color: #fff;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access ul li.current_page_item > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: #fff;
+}
+* html #access ul li.current_page_item a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: #fff;
+}
+
+
+/* content
+-------------------------------------------------------------- */
+
+#main {
+	clear: both;
+	overflow: hidden;
+	padding: 0 0;
+}
+#content {
+	margin-bottom: 36px;
+}
+#content,
+#content input,
+#content textarea {
+	color: #333;
+	font-size: 16px;
+	line-height: 24px;
+}
+#content p,
+#content ul,
+#content ol,
+#content dd,
+#content pre,
+#content hr {
+	margin-bottom: 24px;
+}
+#content ul ul,
+#content ol ol,
+#content ul ol,
+#content ol ul {
+	margin-bottom: 0;
+}
+#content pre,
+#content kbd,
+#content tt,
+#content var {
+	font-size: 13px;
+	line-height: 21px;
+}
+#content code {
+	font-size: 13px;
+}
+#content dt,
+#content th {
+	color: #000;
+}
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+}
+#content table {
+	border: 1px solid #e7e7e7;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+#content tr th,
+#content thead th {
+/*	color: #888;*/
+	color: #696969;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+#content tr td {
+	border-top: 1px solid #e7e7e7;
+	padding: 6px 24px;
+}
+#content tr.odd td {
+	background: #f2f7fc;
+}
+.hentry {
+	margin: 0 0 58px 0;
+}
+.home .sticky {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+.single .hentry {
+	margin: 0 0 22px 0;
+}
+.page-title {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 36px 0;
+}
+.page-title span {
+/*	color: #333;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: normal;*/
+}
+.page-title a:link,
+.page-title a:visited {
+	/*	color: #888;*/
+	color: #696969;
+
+	text-decoration: none;
+}
+.page-title a:active,
+.page-title a:hover {
+/*	color: #ff4b33;*/
+}
+#content .entry-title {
+	color: #000;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 0;
+}
+.entry-title a:link,
+.entry-title a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #ff4b33;
+}
+.entry-meta {
+/*	color: #888;*/
+	color: #696969;
+    font-size: 12px;
+    height: 18px;
+}
+.entry-meta abbr,
+.entry-utility abbr {
+	border: none;
+}
+.entry-meta abbr:hover,
+.entry-utility abbr:hover {
+	border-bottom: 1px dotted #666;
+}
+.entry-content,
+.entry-summary {
+	clear: both;
+/*	padding: 23px 0 0 0;*/
+}
+#content .entry-summary p:last-child {
+	margin-bottom: 12px;
+}
+.entry-content fieldset {
+	border: 1px solid #e7e7e7;
+	margin: 0 0 24px 0;
+	padding: 24px;
+}
+.entry-content fieldset legend {
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	padding: 0 24px;
+}
+.entry-content input {
+	margin: 0 0 24px 0;
+}
+.entry-content input.file,
+.entry-content input.button {
+	margin-right: 24px;
+}
+.entry-content label {
+	/*	color: #696969;*/
+	color: #3c3937;
+
+	font-size: 12px;
+}
+.entry-content select {
+	margin: 0 0 24px 0;
+}
+.entry-content sup,
+.entry-content sub {
+	font-size: 10px;
+}
+.entry-content blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 24px;
+	text-align: right;
+	width: 33%;
+}
+.entry-content blockquote.right {
+	float: right;
+	margin-left: 24px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
+.page-link {
+	clear: both;
+	color: #000;
+	font-weight: bold;
+	margin: 0 0 22px 0;
+	word-spacing: 0.5em;
+}
+.page-link a:link,
+.page-link a:visited {
+	background: #f1f1f1;
+	color: #333;
+	font-weight: normal;
+	padding: 0.5em 0.75em;
+	text-decoration: none;
+}
+.home .sticky .page-link a {
+	background: #d9e8f7;
+}
+.page-link a:active,
+.page-link a:hover {
+	color: #ff4b33;
+}
+body.page .edit-link {
+	clear: both;
+	display: block;
+}
+#entry-author-info {
+	/*background: #f2f7fc;*/
+	/*border-top: 4px solid #000;*/
+	clear: both;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 24px 0;
+	overflow: hidden;
+	padding: 18px 20px;
+}
+#entry-author-info #author-avatar {
+	background: #fff;
+	float: left;
+	height: 60px;
+	margin: 0 -104px 0 0;
+	padding: 11px;
+}
+#entry-author-info #author-description {
+	float: left;
+	margin: 0 0 0 104px;
+}
+#entry-author-info h2 {
+	color: #000;
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.entry-utility {
+	clear: both;
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+	line-height: 18px;
+}
+.entry-meta a,
+.entry-utility a {
+	/*	color: #888;*/
+	color: #696969;
+
+}
+.entry-meta a:hover,
+.entry-utility a:hover {
+	color: #ff4b33;
+}
+#content .video-player {
+	padding: 0;
+}
+
+
+/* =Asides
+-------------------------------------------------------------- */
+
+.home #content .format-aside p,
+.home #content .category-asides p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+.home .hentry.format-aside,
+.home .hentry.category-asides {
+	padding: 0;
+}
+.home #content .format-aside .entry-content,
+.home #content .category-asides .entry-content {
+	padding-top: 0;
+}
+
+
+/* =Gallery listing
+-------------------------------------------------------------- */
+
+.format-gallery .size-thumbnail img,
+.category-gallery .size-thumbnail img {
+	border: 10px solid #f1f1f1;
+	margin-bottom: 0;
+}
+.format-gallery .gallery-thumb,
+.category-gallery .gallery-thumb {
+	float: left;
+	margin-right: 20px;
+	margin-top: -4px;
+}
+.home #content .format-gallery .entry-utility,
+.home #content .category-gallery .entry-utility {
+	padding-top: 4px;
+}
+
+
+/* =Attachment pages
+-------------------------------------------------------------- */
+
+.attachment .entry-content .entry-caption {
+	font-size: 140%;
+	margin-top: 24px;
+}
+.attachment .entry-content .nav-previous a:before {
+	content: '\2190\00a0';
+}
+.attachment .entry-content .nav-next a:after {
+	content: '\00a0\2192';
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+.wp-caption {
+	background: #f1f1f1;
+	line-height: 18px;
+	margin-bottom: 20px;
+	max-width: 632px !important; /* prevent too-wide images from breaking layout */
+	padding: 4px;
+	text-align: center;
+}
+.wp-caption img {
+	margin: 5px 5px 0;
+}
+.wp-caption p.wp-caption-text {
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+	margin: 5px;
+}
+.wp-smiley {
+	margin: 0;
+}
+.gallery {
+	margin: 0 auto 18px;
+}
+.gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+.gallery img {
+	border: 2px solid #cfcfcf;
+}
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.gallery .gallery-caption {
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.gallery dl {
+	margin: 0;
+}
+.gallery img {
+	border: 10px solid #f1f1f1;
+}
+.gallery br+br {
+	display: none;
+}
+#content .attachment img {/* single attachment images should be centered */
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.navigation {
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+	line-height: 34px;
+	overflow: hidden;
+}
+.navigation a:link,
+.navigation a:visited {
+	font-size:14px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.navigation a:active,
+.navigation a:hover {
+	color: #efa930 !important;
+
+}
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#nav-above {
+/*	margin: 0 0 18px 0;*/
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above,
+.single #nav-above {
+	display: block;
+}
+#nav-below {
+/*	margin: -18px 0 0 0;*/
+	clear: both;
+	padding-bottom:30px
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color:#222;
+	font-size:34px;
+	line-height:39px;
+	font-weight:normal;
+}
+
+h3#comments-title {
+	padding: 0 0 13px 94px;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0;
+}
+.commentlist li.comment {
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 93px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 9px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar,
+.commentlist .photo {
+    height: 60px;
+    left: 16px;
+    position: absolute;
+    top: 4px;
+    width: 62px;
+}
+.comment-author {
+    font-size: 13px;
+    line-height: 24px;
+	padding-bottom:2px;
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+
+.comment-date {
+	/*	color: #888;*/
+	color: #696969;
+
+}
+
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	/*	color: #888;*/
+	color: #696969;
+
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	/*	color: #888;*/
+	color: #696969;
+
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #E7E7E7;
+    margin: 0 0 18px 95px;
+    padding: 0 0 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	/*	color: #888;*/
+	color: #696969;
+
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Comments form */
+input[type=submit] {
+	color: #333;
+}
+#respond {
+	margin: 24px 0 0 93px;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+.children #respond {
+	margin: 0 48px 0 0;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+}
+#respond input {
+	margin: 0 0 9px;
+	width: 98%;
+}
+#respond textarea {
+	width: 98%;
+}
+#respond .form-allowed-tags {
+	/*	color: #888;*/
+	color: #696969;
+
+	font-size: 12px;
+	line-height: 18px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+#respond .form-submit {
+	margin: 12px 0;
+}
+#respond .form-submit input {
+	font-size: 14px;
+	width: auto;
+}
+
+
+/* =Widget Areas
+-------------------------------------------------------------- 
+
+USEFUL IF WE WANT TO ADD WIDGETS TO THIS THEME LATER ON.s
+*/
+/*
+.widget-area ul {
+	list-style: none;
+	margin-left: 0;
+}
+.widget-area ul ul {
+	list-style: square;
+	margin-left: 1.3em;
+}
+.widget-area select {
+	max-width: 100%;
+}
+.widget_search #s {
+	width: 60%;
+}
+.widget_search label {
+	display: none;
+}
+.widget-container {
+	margin: 0 0 18px 0;
+}
+.widget-title {
+	color: #222;
+	font-weight: bold;
+}
+.widget-area a:link,
+.widget-area a:visited {
+	text-decoration: none;
+}
+.widget-area a:active,
+.widget-area a:hover {
+	text-decoration: underline;
+}
+.widget-area .entry-meta {
+	font-size: 11px;
+}
+#wp_tag_cloud div {
+	line-height: 1.6em;
+}
+#wp-calendar {
+	width: 100%;
+}
+#wp-calendar caption {
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 4px;
+	text-align: left;
+}
+#wp-calendar thead {
+	font-size: 11px;
+}
+#wp-calendar thead th {
+}
+#wp-calendar tbody {
+	color: #aaa;
+}
+#wp-calendar tbody td {
+	background: #f5f5f5;
+	border: 1px solid #fff;
+	padding: 3px 0 2px;
+	text-align: center;
+}
+#wp-calendar tbody .pad {
+	background: none;
+}
+#wp-calendar tfoot #next {
+	text-align: right;
+}
+.widget_rss a.rsswidget {
+	color: #000;
+}
+.widget_rss a.rsswidget:hover {
+	color: #ff4b33;
+}
+.widget_rss .widget-title img {
+	width: 11px;
+	height: 11px;
+}
+
+
+#main .widget-area ul {
+	margin-left: 0;
+	padding: 0 20px 0 0;
+}
+#main .widget-area ul ul {
+	border: none;
+	margin-left: 1.3em;
+	padding: 0;
+}
+#primary {
+}
+#secondary {
+}
+
+
+#footer-widget-area {
+}*/
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+
+#colophon {
+	border-top: 4px solid #000;
+	margin-top: -4px;
+	overflow: hidden;
+	padding: 18px 0;
+}
+#site-info {
+	font-weight: bold;
+}
+#site-info a {
+	color: #000;
+	text-decoration: none;
+}
+#site-generator {
+	font-style: italic;
+	position: relative;
+}
+#site-generator a {
+	background: url(images/wordpress.png) center left no-repeat;
+	color: #666;
+	display: inline-block;
+	line-height: 16px;
+	padding-left: 20px;
+	text-decoration: none;
+}
+#site-generator a:hover {
+	text-decoration: underline;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 10px;
+}
+
+
+/* =Mobile Safari ( iPad, iPhone and iPod Touch )
+-------------------------------------------------------------- */
+
+pre {
+	-webkit-text-size-adjust: 140%;
+}
+code {
+	-webkit-text-size-adjust: 160%;
+}
+#access,
+.entry-meta,
+.entry-utility,
+.navigation,
+.widget-area {
+	-webkit-text-size-adjust: 120%;
+}
+#site-description {
+	-webkit-text-size-adjust: none;
+}
+
+
+/* =Print Style
+-------------------------------------------------------------- */
+
+@media print {
+	body {
+		background: none !important;
+	}
+	#wrapper {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		position: relative !important;
+	}
+	.wrapper {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		position: relative !important;
+	}
+	#header {
+		border-bottom: 2pt solid #000;
+		padding-bottom: 18px;
+	}
+	#colophon {
+		border-top: 2pt solid #000;
+	}
+	#site-title,
+	#site-description {
+		float: none;
+		line-height: 1.4em;
+		margin: 0;
+		padding: 0;
+	}
+	#site-title {
+		font-size: 13pt;
+	}
+	.entry-content {
+		font-size: 14pt;
+		line-height: 1.6em;
+	}
+	.entry-title {
+		font-size: 21pt;
+	}
+	#access,
+	#branding img,
+	#respond,
+	.comment-edit-link,
+	.edit-link,
+	.navigation,
+	.page-link,
+	.widget-area {
+		display: none !important;
+	}
+	#container,
+	#header,
+	#footer {
+		margin: 0;
+		width: 100%;
+	}
+	#content,
+	.one-column #content {
+		margin: 24pt 0 0;
+		width: 100%;
+	}
+	.wp-caption p {
+		font-size: 11pt;
+	}
+	#site-info,
+	#site-generator {
+		float: none;
+		width: auto;
+	}
+	#colophon {
+		width: auto;
+	}
+	img#wpstats {
+		display: none;
+	}
+	#site-generator a {
+		margin: 0;
+		padding: 0;
+	}
+	#entry-author-info {
+		border: 1px solid #e7e7e7;
+	}
+	#main {
+		display: inline;
+	}
+	.home .sticky {
+		border: none;
+	}
+}
+
+
+/*------------------substyle---------------------*/
+a:link {
+	color:#FF9900;
+	text-decoration: none;
+}
+
+.georgia {
+	font-family:Georgia, "Bitstream Charter", serif;
+}
+
+.left {
+	float:left;
+}
+
+
+.last-item {
+	padding-right:0;
+}
+
+footer#footer {
+	background-image: url('/wp-content/themes/reigndesign2011/images/footer-bkgd.jpg');
+	background-position:center -415px;
+	background-repeat:repeat-x;
+	height:45px;
+}
+
+#homepage > article {
+	float:left;
+	clear:both;
+}
+
+#services, #process, #team {
+	height:1007px;
+	width:100%;
+	overflow:hidden;
+	background-color:white;
+	
+}
+
+.section-header {
+	position:relative;
+	padding-top:25px;
+	padding-bottom:48px;
+	width:100%;
+}
+
+.section-header img {
+/*	font-size:36pt;*/
+/*	padding-bottom:50px;*/
+	position:absolute;
+}
+
+.section-header h1 {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	position:relative;
+	clear:both;
+	background-repeat: no-repeat;
+    color: transparent;
+	font-size: 41px;
+	margin-bottom:8px;
+	white-space: nowrap;
+	/*margin-bottom: 5px;*/
+}
+
+
+.section-header h2 {
+    color: #7E7E7E;
+    font-size: 22px;
+    line-height: 22px;
+    text-align: left;
+    width: 100%;
+	letter-spacing: -0.3px;
+	font-weight:300;
+}
+
+.section-content {
+    display: table;
+    width: 100%;
+}
+
+#team table {
+    left: -20px;
+    position: relative;
+    width: 881px;
+}
+#team .section-content-small{
+	display:none;
+	
+}
+.section-table {
+	display:table;
+	width:100%
+}
+
+.section-row {
+	display:table-row;
+}
+
+.section-cell {
+	display:table-cell;
+}
+
+
+/* --------------------------------------------------------------
+common header styles between pages: jobs/blog/pages
+--------------------------------------------------------------*/
+
+
+#blog-list .overlay,
+#rd-page .overlay,
+#post .overlay,
+#jobs .overlay {
+    background-image: url("/wp-content/themes/reigndesign2011/images/post-background.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-size: 100px 251px;
+    height: 251px;
+    position: absolute;
+    width: 100%;
+}
+
+#jobs .overlay {
+	background-image:url("/wp-content/themes/reigndesign2011/images/jobs-chalkboard.jpg");
+}
+
+#blog-list .chalkboard,
+#post .chalkboard,
+#rd-page .chalkboard,
+#jobs .chalkboard {
+    background-image: url("/wp-content/themes/reigndesign2011/images/bkgd-post-header.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1195px 231px;
+    height: 231px;
+    position: absolute;
+    width: 100%;
+}
+
+
+#blog-list .wrapper,
+#post .wrapper {
+
+}
+
+#blog-list .header,
+#post .header {
+	width:100%;
+	height:251px;
+	padding-bottom:35px;
+}
+
+#jobs .header,
+#rd-page .header
+ {
+	width:100%;
+	height:251px;
+}
+
+#blog-list #header-image-rd,
+#rd-page #header-image-rd,
+#post #header-image-rd,
+#jobs #header-image-rd {
+   	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -343px -1px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    width: 170px;
+	cursor: pointer;
+}
+
+#blog-list #header-image-blog,
+#post #header-image-blog,
+#rd-page #header-image-blog,
+#jobs #header-image-blog {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -186px -3px;
+    height: 97px;
+    position: absolute;
+    top: 116px;
+    width: 153px;
+	cursor: pointer;
+}
+
+#header-image-404 {
+   background-image: url("/wp-content/themes/reigndesign2011/images/title-404.png");
+    background-repeat: no-repeat;
+    height: 97px;
+    position: absolute;
+    top: 116px;
+    width: 153px;
+}
+
+#blog-list #header-image-jobs,
+#rd-page #header-image-jobs,
+#post #header-image-jobs,
+#jobs #header-image-jobs {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -3px -3px;
+    cursor: pointer;
+    height: 97px;
+    position: absolute;
+    top: 116px;
+    width: 155px;
+}
+
+#header-image-help {
+   background-image: url("/wp-content/themes/reigndesign2011/images/title-help.png");
+    background-repeat: no-repeat;
+    height: 97px;
+    position: absolute;
+    top: 116px;
+    width: 153px;
+}
+
+
+
+#blog-list .loop-content,
+#post .post-content {
+    clear: left;
+    float: left;
+    width: 608px;
+}
+
+
+
+/*----------------------------------------------------------------
+common lists
+----------------------------------------------------------------*/
+.lists ul {
+	margin-left: 0px;
+}
+
+.lists li {
+    background-position: left 10px;
+    background-repeat: no-repeat;
+    font-family: Georgia,"Bitstream Charter",serif;
+    padding: 4px 0 0px 33px;
+	line-height:24px;
+	font-size:14px;
+	color:#333;
+}
+
+
+/*---------------------------------------------------------
+home page
+---------------------------------------------------------*/
+
+#home {
+	background-image: url("/wp-content/themes/reigndesign2011/images/home-bkgd.jpg");
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-size: 22px 677px;
+    clear: both;
+    float: left;
+    height: 675px;
+    width: 100%;
+}
+
+#home .chalkboard {
+    background-image: url("/wp-content/themes/reigndesign2011/images/home-chalkboard.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1190px 500px;
+    height: 500px;
+    position: absolute;
+    width: 100%;
+}
+
+#home .chalkboard-menu-small {
+	display:none;
+}
+#home .chalkboard-logo {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position: 0px -352px;
+	height: 36px;
+    width: 207px;
+	top: 67px;
+	position: relative;
+}
+
+
+
+#home .chalkboard-slogan {
+	height: 158px;
+    width: 421px;
+	top: 258px;
+	position: relative;
+}
+
+
+#services {
+    background-image: url("/wp-content/themes/reigndesign2011/images/section-bkgd.png");
+    background-position: center -5px;
+    background-repeat: repeat-x;
+    clear: both;
+    float: left;
+    height: 830px;
+}
+
+#portfolio, #process {
+	background-image:url("/wp-content/themes/reigndesign2011/images/section-bkgd.png");
+	background-position:center top;
+	background-repeat: repeat-x;
+}
+
+#team {
+	height:952px;
+	background-image:url('/wp-content/themes/reigndesign2011/images/section-team-bkgd_952.png');
+	background-repeat: repeat-x;
+	float:left;
+}
+
+#services .section-header h1 {
+    background-position: -586px -161px;
+    height: 32px;
+    width: 207px;
+}
+
+#portfolio .section-header h1 {
+    background-position: -586px -194px;
+    height: 34px;
+    width: 165px;
+}
+
+#process .section-header h1 {
+    background-position: -586px -228px;
+    height: 34px;
+    width: 140px;
+}
+
+#team .section-header h1 {
+    background-position: -586px -266px;
+    height: 31px;
+    width: 175px;
+}
+
+#contact .section-header h1 {
+    background-position: -590px -302px;
+    height: 30px;
+    width: 200px;
+	clear: left;
+}
+
+#process {
+    float: left;
+    height: 800px;
+}
+
+#contact {
+	background-image:url('/wp-content/themes/reigndesign2011/images/contact-us.jpg');
+	background-repeat:repeat-x;
+	height:930px;
+}
+
+/*----------------------------------------------------------------
+home page menu
+----------------------------------------------------------------*/
+
+.page-menu {
+	display:block;
+	float:right;
+}
+
+.page-menu  ul {  
+    float: right;
+    height: 22px;
+    list-style: none outside none;
+    margin: auto 0;
+    width: 100%;
+}
+
+.page-menu  ul li {  
+    float: left;
+  	padding-left:14px;
+}
+
+.page-menu span {  
+    cursor: pointer;
+    display: block;
+    font-size: 10pt;
+    letter-spacing: -0.25px;
+    text-align: center;
+    text-decoration: none;
+	color:#fab91c;
+	line-height:10px;
+	font-weight:bold;
+}
+
+.page-menu span:hover {
+	color:#353333;
+}
+
+.page-menu .current,
+.page-menu .current:hover {
+	color:#353333;
+}
+
+/*#site-menu  { 
+    clear: both;
+    display: block;
+	top:6px;
+	line-height: 13px;
+}*/
+#site-menu {
+clear: both;
+display: block;
+position: relative;
+line-height: 13px;
+top:6px;
+}
+#site-menu ul {
+    list-style: none outside none;
+    margin: 8px auto;
+	float:right;
+}
+
+#site-menu  ul li {  
+    float: left;  
+	padding: 0px 15px;
+	border-right: 1px solid #555;
+	display: block;
+    font-family:"Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+/*	font-family:"proxima-nova-1","proxima-nova-2";	*/
+    font-size: 12px;
+/*    letter-spacing: 1px;*/
+	letter-spacing: 0.4px;
+    line-height: 13px;
+    text-align: center;
+    text-decoration: none;
+	moz-text-decoration:none;
+}
+#site-menu  ul li a {
+    border: medium none !important;
+    color: #B8BAC0;
+    outline: medium none !important;
+	text-decoration:none;
+	
+}
+
+#site-menu  ul li a:hover {
+	color:#efa930;
+	text-decoration:none;
+}  
+
+#site-menu  ul li a:active {
+	text-decoration:none;
+}
+
+#site-menu  ul li a:visited {
+	text-decoration:none;
+}  
+
+
+#site-menu .last-item{
+	border-right:none;
+	padding-right:0px;
+	
+}
+
+
+#featured {
+/*	background: none repeat scroll 0 0 #999999;*/
+	clear: both;
+	display: table;
+	float: left;
+	left: -30px;
+	position: relative;
+	top: 520px;
+	width: 900px;
+}
+
+
+.featured-block {
+	width:25%;
+	height:134px;
+	position:relative;
+	float:left;
+	font-size:13px;
+	text-height:19pt;
+	cursor: pointer;
+	display:block;
+}
+/*.featured-block:last-of-type {
+	padding-right:0;
+	
+}*/
+.featured-image {
+    background-color: transparent;
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -768px -68px;;
+    background-repeat: no-repeat;
+    display: block;
+    height: 79px;
+    margin: 0 auto;
+    padding: 5px;
+    width: 156px;
+    
+}
+
+.featured-image:hover {
+    background-position: -590px -68px;
+}
+
+.featured-text {
+    margin: 0 auto;
+    width: 170px;
+    display:block;
+}
+.featured-text-title {
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 5px 0px 1px;
+    text-align: center;
+    text-transform: uppercase;
+	display:block;	
+	
+}
+
+.featured-text-subtitle {
+    display:block;	
+    color: #676767;
+    font-size: 13px;
+    letter-spacing: -0.25pt;
+    line-height: 14px;
+    text-align: center;
+}
+
+
+/*---------------------------------------------------------------
+Services
+---------------------------------------------------------------*/
+
+#services strong {
+	color:#d97251; /*burnt orange*/
+	
+}
+
+#services .section-content {
+    left: -30px;
+    width: 880px;
+}
+
+#services .section-content-small {
+	display:none;
+}
+
+#services .service-column-text {
+	color: #333;
+    font-family: Georgia, "Bitstream Charter", serif;
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0;
+}
+
+
+.services-column {
+	display:table-cell;
+	margin: 0;
+}
+
+.services-column * {
+	width: 253px;
+}
+
+.services-column h1 {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    height: 52px;
+    line-height: 22px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.services-column figure {
+	margin:0;
+}
+
+#services figure img {
+    height: 162px;
+    width: 255px;
+	padding-bottom: 15px;
+}
+
+#services figcaption {
+	color: #696969;
+    font-size: 17px;
+    height: 53px;
+    line-height: 21px;
+	letter-spacing: -0.25px;
+	display:block;
+}
+
+
+/*---------------------------------------------------------------
+Portfolio
+---------------------------------------------------------------*/
+#portfolio {
+    background-color: white;
+    clear: both;
+    float: left;
+    height: 700px;
+    overflow: hidden;
+    width: 100%;
+}
+#portfolio .section-content-small, .section-content-tiny {
+	display:none;
+}
+
+#portfolio strong  {
+	/*color:#926fd5;*/ /*purple*/
+	color: #FBBD42;
+	
+}
+
+.portfolio-sample {
+	background-repeat: no-repeat;
+    height: 690px;
+    width: 840px;
+}
+
+.portfolio-image {
+	position: absolute;
+}
+
+
+.portfolio-text {
+	height:435px;
+}
+
+.portfolio-description {
+	padding-top: 10px;
+	padding-bottom: 14px;
+}
+
+
+.portfolio-template-A .portfolio-text {
+	float:right;
+	width:420px;
+}
+
+.portfolio-template-A .portfolio-description {
+
+}
+
+.portfolio-template-A1 .portfolio-text {
+	float:right;
+	width:390px;
+}
+
+.portfolio-template-A1 .portfolio-description {
+
+}
+
+.portfolio-template-A2 .portfolio-text {
+	float:right;
+	width:390px;
+}
+
+.portfolio-template-A2 .portfolio-description {
+
+}
+
+.portfolio-template-B .portfolio-text {
+	float:right;
+	width:449px;
+}
+
+.portfolio-template-C .portfolio-text {
+	float:left;
+}
+
+.portfolio-template-C .portfolio-description {
+	width:380px;
+}
+
+.portfolio-template-C1 .portfolio-description {
+    padding-top: 43px;
+}
+
+.portfolio-template-C1 .portfolio-text {
+	float:left;
+	width:375px;
+}
+
+.portfolio-template-C2 .portfolio-description {
+}
+
+.portfolio-template-C2 .portfolio-text {
+	float:left;
+	width:380px;
+}
+
+
+
+.portfolio-description h1 {
+    background-repeat: no-repeat;
+    color: #333;
+    font-size: 30px;
+    padding-bottom: 13px;
+	line-height:30px;
+	letter-spacing: -0.25px;
+}
+
+.portfolio-template-B .portfolio-description h1 {
+	padding-top: 70px;
+	background-position:right -55px;
+	letter-spacing:-.5px;
+}
+
+.portfolio-template-C .portfolio-description h1,
+.portfolio-template-C1 .portfolio-description h1 {
+	padding-top: 10px;
+	padding-bottom: 18px;
+	height:75px;
+}
+
+.portfolio-template-C .portfolio-description h1 {
+	padding-left: 102px;
+	letter-spacing: -0.5px;
+}
+
+.portfolio-template-C1 .portfolio-description h1 {
+    padding-bottom: 0;
+    padding-left: 80px;
+}
+
+.portfolio-template-C2 .portfolio-description h1 {
+	padding-top: 10px;
+	padding-bottom: 18px;
+}
+
+.portfolio-description h1 strong {
+	color:#888 !important; /*gray*/	
+}
+
+.portfolio-description p {
+    color: #676767;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 14px;
+}
+
+.portfolio-list {
+/*	padding-bottom:20px;
+	border-bottom:gray 1px solid;*/
+}
+
+.portfolio-template-A .portfolio-list,
+.portfolio-template-A footer,
+.portfolio-template-A1 .portfolio-list,
+.portfolio-template-A1 footer
+ {
+	width:315px;
+	float:right;
+	padding-left:5px;
+}
+
+.portfolio-template-A2 .portfolio-list,
+.portfolio-template-A2 footer
+ {
+	width:390px;
+	float:right;
+}
+
+
+.portfolio-template-A .portfolio-list,
+.portfolio-template-A footer {
+	width:357px;
+}
+
+.portfolio-template-B .portfolio-list,
+.portfolio-template-B footer {
+	width:430px;
+	float:right;
+}
+
+.portfolio-template-C .portfolio-list,
+.portfolio-template-C footer {
+	float:left;
+	width:410px;
+} 
+
+.portfolio-template-C1 .portfolio-list,
+.portfolio-template-C1 footer {
+	float:left;
+	width:320px;
+}
+
+.portfolio-template-C2 .portfolio-list,
+.portfolio-template-C2 footer {
+	float:left;
+	width:320px;
+}
+
+
+.portfolio-list h1 {
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.portfolio-list ul {
+    padding-bottom: 22px;
+}
+
+.portfolio-list li {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -983px -6px;
+}
+
+.portfolio-list .list-topic {
+    color: #8966CC;
+    font-weight: bold;
+}
+
+.sample-buttons {
+	display:block;
+	clear:both;
+	padding-top:9px;
+	
+}
+
+.portfolio-template-A .sample-buttons,
+.portfolio-template-A1 .sample-buttons,
+.portfolio-template-A2 .sample-buttons,
+.portfolio-template-B
+ .sample-buttons {
+	float:right;
+}
+
+.portfolio-template-C .sample-buttons {
+	float:left;
+}
+
+.portfolio-sample footer {
+	clear:both;
+	border-top: 1px solid #a9a9a9;
+}
+
+.sample-buttons a {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -189px -68px;
+    background-repeat: no-repeat;
+    color: white;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 21px;
+    line-height: 21px;
+    margin-left: 5px;
+    text-align: center;
+    width: 80px;
+	font-weight:bold;
+}
+
+.sample-buttons a:hover {
+	background-position:-189px -93px;
+}
+
+/*---------------------------------------------------------------
+Process
+---------------------------------------------------------------*/
+#process strong  {
+	color:green; /*green*/
+}
+
+#process .section-content {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: 0 -391px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -8px;
+    width: 855px;
+}
+#process .section-content-small{
+	display:none;
+	
+}
+.section-table {
+	display:table;
+	width:100%
+}
+
+#process .steps {
+	padding-bottom:117px;
+	width:750px;
+}
+
+
+#process .steps .section-cell {
+    height: 150px;
+    padding-left: 22px;
+}
+
+#process .steps figcaption {
+    display: block;
+    padding: 20px 25px;
+    position: absolute;
+    width: 270px;
+}
+
+/*#process .steps figcaption h1*/
+#process .steps h1 {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-transform: uppercase;
+    width: 265px;
+	padding-top: 26px;
+}
+
+/*#process .steps figcaption p*/
+#process .steps p {
+    color: #676767;
+    font-family: Georgia,"Bitstream Charter",serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#process .steps img {
+    position: relative;
+	float:left;
+}
+
+
+#process .process-arrow {
+	/*background-image:url('/wp-content/themes/reigndesign2011/images/process-arrow.jpg');*/
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -16px -599px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 99px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+#process .process-arrow img {
+
+}
+
+.process-list h2 {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.process-list ul {
+	width:370px;
+}
+
+.process-list li {
+	background-image:url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -983px -94px;
+	
+/*	-750px -91px*/
+}
+
+
+/*---------------------------------------------------------------
+Team
+---------------------------------------------------------------*/
+#team header {
+
+}
+#team strong  {
+	color:#fbbd42; /*yellow?  should it be blue??*/	
+}
+
+#team td {
+	width: 157px;
+	padding-bottom: 20px;
+}
+
+#team figure {
+	margin:0 auto;
+}
+
+#team figcaption {
+	text-align:center;
+	padding-top:12px;
+	display:block;
+	margin: 0 auto;
+}
+#team .brady {
+	width:135px;
+	height:105px;
+	background-repeat: no-repeat;
+	margin:0 auto;
+	background-position: 0 -420px;
+}
+#team .placeholder {
+    display:inline-block;
+    padding-left:35px;
+}
+#team td {
+    vertical-align:top;
+}
+#team .person-name {
+	color:#333;
+	font-size:15px;
+	line-height:22px;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+#team .person-detail {
+	font-size:12px;
+	color:#333;
+}
+
+
+
+#team .nonperson {
+
+}
+
+#team .nonperson figure div {
+	background-position:0 0px;
+	background-size:90%;
+	vertical-align:top;
+}
+
+#team .team-job {
+}
+
+#team .team-job a {
+	color:#3368a9;
+	font-weight:bold;
+	font-style:italic;
+	
+}
+
+#team .team-job a:hover {
+	border-bottom:blue 1px dotted;
+}
+
+/*---------------------------------------------------------------
+Contact Us
+---------------------------------------------------------------*/
+#contact {
+    float: left;
+    font-size: 20px;
+    height: 574px;
+    width: 100%;
+}
+
+#contact header {
+	z-index: 0;
+	padding-top: 28px;
+	padding-bottom: 32px;
+	letter-spacing:0 !important;
+}
+
+#contact header h2 {
+	color:#ff9900;
+	letter-spacing: -0.3px !important;
+	text-align: center;
+}
+
+#contact .up-arrow {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -728px 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: right;
+    height: 65px;
+    position: relative;
+    top: -26px;
+    width: 55px;
+    z-index: 100;
+}
+
+#contact .up-arrow:hover {
+	/*background-image:url('/wp-content/themes/reigndesign2011/images/top-arrow-gray.png');*/
+	background-position: -795px 0;
+}
+
+#contact h2 {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 12px;
+    position: relative;
+    text-shadow: 1px 2px 1px #000000;
+    text-transform: uppercase;
+}
+
+#contact #confirm_message h2 {
+    color:#e6e7e8;
+    line-height: 33px;
+}
+
+#contact #confirm_message p {
+    font-size: 19px;
+    line-height: 22px;
+    text-shadow: 1px 2px 1px #000000;
+	color: #FF9900;
+}
+
+#contact .section-content {
+/*	height:415px;*/
+}
+#footer-small {
+	display:none;
+}
+#contact .section-cell {
+	vertical-align: top;
+}
+
+#contact #contact_info {
+	border-right:2px dotted #808285;
+	padding-right: 109px;
+}
+
+#contact .office-image {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: 0 -159px;
+    background-repeat: no-repeat;
+    height: 175px;
+    margin: 0;
+    width: 287px;
+}
+
+#contact .office-image:hover {
+	background-position: -288px -159px;
+}
+
+#contact #contact_form {
+	padding-left: 65px;
+}
+
+#contact .contact-us-text {
+	color:#8c8d8e;
+	font-size:14px;
+	line-height:18px;
+	padding-top: 6px;
+	margin-bottom: 25px;
+}
+
+#contact .contact-us-text a:hover {
+	border-bottom:1px dotted;
+}
+
+#contact .adr * {
+	font-size:12px;/*18px;*/
+	font-style: normal;
+	font-family:Georgia, "Bitstream Charter", serif; 
+	/*	color: #888;*/
+	color: #696969;
+
+	line-height: 22px;
+	font-weight:bold;
+	letter-spacing: -0.25px;
+	padding-bottom: 5px;
+}
+
+#contact .tel {
+	color:#666666;
+	font-size:12px;
+}
+
+.social-buttons {
+	display: block;
+	float: left;
+	position: relative;
+	top: -4px;
+	left: -3px;
+}
+
+.social-buttons div,
+.social-buttons a {
+	background-image:url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	display:block;
+	height: 43px;
+	width: 42px;
+	float:left;
+	background-repeat:no-repeat;
+
+}
+
+.social-buttons .linkedIn {
+	background-position: -10px -68px
+
+}
+.social-buttons .linkedIn:hover {
+	background-position: -10px -11px
+}
+
+.social-buttons .twitter {
+	background-position: -61px -68px;
+}
+.social-buttons .twitter:hover {
+	background-position: -61px -11px;
+}
+
+.social-buttons .facebook {
+	background-image:url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -114px -68px;
+}
+
+
+.social-buttons .facebook:hover {
+	background-position: -114px -11px;
+}
+
+
+#contact #confirm_message {
+	text-align: left;
+	color: #8C8D8E;
+	padding-top: 15px;
+	width:401px
+}
+
+#contact #confirm_message,
+#contact form {
+	float:right;
+}
+
+#contact form * {
+	outline:none !important;
+}
+
+#contact form p {
+	padding-left:22px;
+	font-size:13px;
+	margin-bottom:17px;
+	color: #888888;
+}
+
+#contact form p.required-field {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -979px -150px;
+    background-repeat: no-repeat;
+}
+
+
+#contact .submit-container {
+	margin-bottom:0px;
+}
+
+#contact form label {
+	font-size:14px;
+    display: block;
+    text-transform: uppercase;
+	font-weight:bold;
+	color: #696969;
+
+}
+
+#contact form p.radio-btns label {
+	padding-left:4px;
+}
+
+#contact form p.radio-btns  {
+	margin-bottom:10px;
+}
+
+#contact input, 
+#contact textarea, 
+#contact select,
+#footer-content input,
+.ui-selectmenu-status {
+	background:#676767;
+}
+
+#contact input.radio {
+	background:none;
+}
+
+#contact input, 
+#contact textarea, 
+#contact select, 
+#contact textarea, 
+#footer-content input,
+.ui-selectmenu-status {
+	font-size:14px;
+	padding: 0 0 0 7px;
+	/*border: 1px solid #666666;*/
+	letter-spacing: -0.25px;
+	border:none;
+	font-family:helvetica, arial;
+	color: #CCCCCC;
+	box-shadow: 1px 1px 1px #333 inset;
+	-moz-box-shadow: 1px 1px 1px #333 inset;
+	-webkit-box-shadow: 1px 1px 1px #333 inset;
+}
+
+#contact input#name, #contact input#email, #contact textarea#message {
+    max-width: 339px;
+    min-width: 339px;
+    width: 339px;
+}
+#contact input#name:active, #contact input#email:active, #contact textarea#message:active,
+#contact input#name:focus, #contact input#email:focus, #contact textarea#message:focus {
+	background:#E4E4E4;
+	color:#333;
+	/*border-color:white;*/
+	outline: none !important;
+}
+
+#contact input#name, #contact input#email {
+	height:30px;
+}
+
+#contact select, .ui-selectmenu-status {
+	height:25px
+}
+
+#contact .ui-selectmenu-status {
+	line-height: 25px;
+}
+
+
+#contact select,
+.ui-selectmenu-status {
+	font-family:"proxima-nova-1","proxima-nova-2";	
+	width:230px;
+}
+
+#contact .message-container {
+	margin-bottom:15px;
+}
+
+#contact textarea#message {
+	padding-top:10px;	
+    height: 157px;
+    max-height: 157px;
+	min-height:28px;
+	overflow: auto;
+}
+
+
+#contact input[type="submit"],
+#footer-content input[type="submit"] {
+	cursor: pointer;
+    background-color: transparent;
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-repeat: no-repeat;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#contact .submit-container input[type="submit"],
+#contact .submit-container .button {
+    background-position: -484px -16px;
+    background-repeat: no-repeat;
+    height: 31px;
+    width: 102px;
+}
+
+#contact .submit-container input[type="submit"]:hover,
+#contact .submit-container .button:hover {
+	background-position: -484px -67px;
+}
+
+
+#contact #newsletter input[type="submit"] {
+    background-position: -190px -16px;
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 83px;
+	margin-top: 10px;
+}
+#contact #newsletter input[type="submit"]:hover {
+	background-position: -190px -42px;
+}
+
+#footer-content #newsletter input[type="submit"] {
+    background-position: -272px -236px;
+	background-image:url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    height: 26px;
+    width: 57px;
+	margin-top: 8px;
+}
+
+#footer-content #newsletter input[type="submit"]:hover {
+    background-position: -272px -268px;	
+	background-image:url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+}
+
+
+.blank_field {
+    box-shadow: 0 0 5px #FF9900 !important;
+	-moz-box-shadow: 0 0 5px #FF9900 !important;
+	-webkit-box-shadow: 0 0 5px #FF9900 !important;
+}
+
+#contact form p.price-list-container {
+	margin-bottom:10px;
+	background-position: -979px -153px;
+}
+
+#contact form p.blank_error {
+	background-position:-979px -324px;
+}
+
+#contact #newsletter {
+	padding-top: 60px;
+}
+
+.section-content-small{
+	display:none;
+}
+
+#footer-content #newsletter {
+}
+
+#newsletter p {
+    color: #8b8d8f;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0;
+    text-align: left;
+	margin-bottom: 14px;
+}
+#newsletter_border {
+	border:3px solid #58595B;
+	height: 41px;
+}
+
+#contact #newsletter_border {
+	width: 389px;
+}
+
+#newsletter_border input#newsletter_email {
+    clear: left;
+    float: left;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 2px 5px 0;
+}
+
+#contact #newsletter_border input#newsletter_email {
+	max-width: 268px;
+    min-width: 268px;
+	height: 20px;
+	margin: 10px 8px 10px 11px;
+}
+
+#footer-content #newsletter_border input#newsletter_email {
+	max-width: 157px;
+    min-width: 157px;	
+	height: 22px;
+	margin: 8px 10px 8px 11px;
+	font-size: 12px;
+	color:#999;
+}
+
+#newsletter_border input#newsletter_email:focus {
+	background:#E4E4E4;
+	color:#333;
+	outline: none !important;
+	border:none;
+}
+
+
+/*-------------------------------------------------------
+blog????
+-------------------------------------------------------*/
+.nav-post {
+	background-image: url("/wp-content/themes/reigndesign2011/images/nav-links-bkgd.png");
+    background-repeat: repeat-x;
+    height: 34px;
+    margin: 0 0 0 94px;
+}
+
+.nav-post a:link,
+.nav-post a:visited {
+	color: #EFEFEF;
+}
+
+
+.nav-blog a:link,
+.nav-blog a:visited {
+	color: #333;
+}
+
+
+#blog-list .loop-content article,
+#post .post-content article {
+	width:100%;
+	float:left;
+}
+
+
+#blog-list .loop-content article > section,
+#post .post-content article > section {
+	float:right;
+	width:514px;
+	border-bottom:1px solid #c2c2c2;
+	padding-bottom: 25px;
+}
+
+#blog-list .loop-content h1,
+#post .post-content h1,
+h2.entry-title  {
+	padding-bottom:24px !important;
+}	
+
+#blog-list .loop-content h1,
+.post-content h1,
+.entry-title a:link, .entry-title a:visited  {
+    color: #333333;
+    font-size:32px;
+	line-height:39px;
+	font-weight:300;
+	
+}
+
+#search-page .page-title,
+#tag-page .page-title,
+#category-page .page-title,
+#author-page .page-title,
+#archive-page .page-title {
+    color: #888888 !important;
+    font-size: 22px !important;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-left: 93px;
+}
+
+.page-title span {
+	font-family: "Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif !important;
+}
+
+
+#blog-list .loop-content article aside,
+#post .post-content article aside {
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    width: 79px;
+	overflow:visible;
+	font-size:12px;
+	padding: 7px 0 0;
+}
+
+#blog-list .loop-content article aside div,
+#post .post-content article aside div {
+    color: #888888;
+    float: right;
+    position: relative;
+    right: 0;
+    text-align: right;
+
+}
+
+
+
+#blog-list .loop-content #author-avatar,
+#post .post-content #author-avatar {
+	background: none repeat scroll 0 0 #FFFFFF;
+    float: right;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+#author-link {
+	padding-bottom:20px;
+	white-space: nowrap;
+	width:100px !important;
+}
+
+
+#author-google-plus,
+#author-twitter, 
+#author-facebook {
+	height:30px;
+}
+
+#author-google-plus {
+	width:66px !important;
+}
+
+#author-twitter {
+	width:76px !important;
+}
+
+#author-facebook  {
+	left: -11px;
+    width: 90px;
+}
+.fb_ltr {
+	position:relative;
+	right: -14px !important;
+}
+
+#author-tags,
+#author-categories {
+	padding-top:9px;
+}
+
+#author-tags h4,
+#author-categories h4 {
+	padding-bottom:3px;
+}
+
+
+#author-tags span,
+#author-categories span {
+	color:black;
+}
+
+.entry-date {
+	text-transform:uppercase;
+}
+
+.ordinal-number {
+	text-transform:none;
+}
+
+.comment-link:link, .comment-link:visited {
+    color: #333333;
+    font-size:13px;
+	line-height:24px;
+	text-transform: uppercase;
+}
+
+.comment-link:hover {
+	color:#efa930 !important;
+}
+
+.comment-body {
+	border-bottom: 1px solid #C2C2C2;
+	font-size:14px;
+	line-height:24px;
+}
+
+.entry-content,
+.entry-summary {
+	color: #696969;
+	font-size:14px;
+	line-height:28px;
+}
+
+.entry-content a,
+.entry-summary a,
+.comment-body a {
+	color:#FF9900;
+	font-weight: bold;
+}
+
+.entry-content a:hover,
+.entry-summary a:hover,
+.comment-body a:hover {
+	color:#999999;
+}
+
+.widget-container {
+    float: left;
+    padding-bottom: 42px;
+    width: 100%;
+}
+
+#searchform #s {
+	outline:none;
+	border:none;
+	background:none;
+	width: 165px;
+	float: left;
+}
+
+#searchform {
+	border:1px solid black;
+}
+
+#searchform input {
+	line-height:13px;
+}
+
+#searchform #searchsubmit {
+	outline: none;
+	border: none;
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -495px -49px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	color: transparent;
+	width:20px;
+	float:right;
+	cursor: pointer;
+}
+
+#primary h3 {
+	height: 27px;
+	background-repeat:no-repeat;
+	color: transparent;
+    font-size: 24px;
+	margin-bottom:16px;
+	width:180px
+}
+
+#primary {
+	color: #696969;
+
+}
+
+#primary ul {
+	padding-left:7px;
+}
+
+#primary a,
+#entry-author-info a {
+	color:#000;
+}
+
+#primary a:hover,
+#entry-author-info a:hover {
+	color:#EFA930;
+}
+
+#primary input.field,
+#searchform,
+#comments-block-left input,
+#comments-block-right textarea
+ {
+    background: none repeat scroll 0 0 #E4E4E4;
+    border-color: #AFAEAE;
+    border-style: solid none none solid;
+    border-width: 3px 0 0 3px;
+    outline: medium none !important;
+    padding: 5px 6px;
+    
+}
+
+#primary input.field,
+#searchform,
+#comments-block-left input {
+	height: 19px;
+}
+
+#comments-block-left input {
+	width:185px;
+}
+
+#comments-block-right textarea {
+	width:294px;
+	height:104px;
+	margin:0;
+}
+
+#primary input.field,
+#searchform {
+	width: 192px;
+}
+
+#primary input.field {
+	margin-top: 15px;
+}
+
+#primary input:invalid {
+    -moz-box-shadow: none;
+}
+
+#primary #subscribe_btn {
+    background-color: transparent;
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -183px -236px;
+    background-repeat: no-repeat;
+    border: medium none;
+    float: right;
+    height: 26px;
+    margin-top: 15px;
+    width: 83px;
+}
+
+#primary #subscribe_btn:hover {
+	background-position: -183px -268px;
+}
+
+
+#search h3 {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -185px -165px;
+    width: 100px;
+}
+
+#subscribe h3 {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -185px -137px;
+    width: 110px;
+}
+
+
+#subscribe #subscribe-block {
+	float:left;
+	clear:both;
+	width:100%;
+}
+
+#subscribe #subscribe-email-form {
+	height:0px;
+	overflow:hidden;
+	width:100%;
+}
+
+#subscribe #subscribe-email-thankyou {
+	color: #888888 !important;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#tags h3 {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -3px -195px;
+}
+
+#archives, #categories {
+	font-size:13px;
+	line-height:30px;
+}
+
+#archives ul, #categories ul{
+	padding-top:5px;
+}
+
+#archives h3 {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position:0 -160px;	
+}
+
+#categories h3 {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position:0 -138px;
+}
+
+#subscribe #email-button {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");	
+	cursor: pointer;
+	background-position:0 -236px;
+}
+#subscribe #email-button:hover,
+#subscribe #email-button.active {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png") !important;	
+	background-position:0 -268px;
+}
+
+#subscribe #rss-button {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");	
+	background-position:-92px -236px;
+}
+#subscribe #rss-button:hover {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");	
+	background-position:-92px -268px;
+}
+
+#subscribe a,
+#subscribe div {
+    display: block;
+    float: left;
+    height: 26px;
+    margin-right: 5px;
+    width: 83px;
+	color:transparent !important;
+}
+
+
+#comments-block-left,
+#comments-block-right {
+/*	width:50%;*/
+}
+	
+#comments-block-left {
+	float:left;	
+	clear:left;
+}
+	
+#comments-block-right {
+	float:right;
+	clear:right;
+}
+
+#respond .form-submit {
+    clear: both;
+    float: right;
+}
+
+#commentform #submit {
+    background-color: transparent;
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -183px -236px;
+    border: medium none;
+    color: transparent;
+    height: 26px;
+    outline: medium none;
+    width: 82px;
+}
+
+#commentform #submit:hover {
+	background-position: -183px -268px;
+}
+
+/*-------------------------------------------------------
+footer
+-------------------------------------------------------*/
+#site-info {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -820px -236px;
+    background-repeat: no-repeat;
+    height: 23px;
+    position: relative;
+    top: 10px;
+    width: 113px;
+}
+
+#site-generator {
+	float: right;
+    font-style: normal;
+    height: 45px;
+    line-height: 45px;
+    width: 600px;
+	text-align: right;
+	letter-spacing: -0.1px;
+	font-size:13px;
+	color: #696969;
+
+	font-family: helvetica,arial,sans-serif;
+}
+
+.nav-links {
+    float: right;
+    overflow: hidden;
+    padding-right: 110px;
+    width: 285px;
+
+}
+#bottom-overlay-small{
+	display:none;
+}
+#bottom-overlay {
+	background-image:url("/wp-content/themes/reigndesign2011/images/footer-bkgd.jpg");
+	clear:both;
+	height:559px;
+	width:100%;
+	color: #999;
+}
+
+#bottom-overlay #footer-content {
+	padding-top:145px;
+	float:left;
+	clear:both;
+	width:100%;
+}
+
+#bottom-overlay #footer-left {
+    border-right: 2px dotted;
+    clear: left;
+    float: left;
+    height: 350px;
+    width: 550px;
+}
+
+#bottom-overlay #footer-column-list {
+    display: table;
+    width: 100%;
+}
+
+#bottom-overlay #footer-column-list ul {
+    float: left;
+    width: 25%;
+}
+
+#bottom-overlay #footer-column-list li {
+	padding-bottom:5px;
+	font-family:"Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	font-size:13px;
+	line-height:28px;	
+}
+
+#bottom-overlay a {
+	color:#999999;
+}
+
+#bottom-overlay a:hover {
+	color:#efa930;
+}
+
+#bottom-overlay h4 {
+    font-size: 15px;
+    line-height: 33px;
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 1px #000000;
+    text-transform: uppercase;
+	font-weight:bold;
+}
+
+#bottom-overlay #footer-right h4 {
+	text-transform:uppercase;
+}
+
+#bottom-overlay #footer-right {
+	width:260px;
+	height: 350px;	
+}
+
+#bottom-overlay #footer-right .right {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -414px -211px;
+    cursor: pointer !important;
+    height: 80px;
+    margin-right: 16px;
+    padding: 9px 14px 5px;
+    width: 56px;
+}
+
+#bottom-overlay #footer-right .right:hover {
+	background-position: -334px -211px;
+}
+
+#footer-right .clear {
+	padding-bottom:46px;
+}
+
+#contactUs-block {
+    color: #EFA930;
+    text-shadow: 3px 3px 1px #000000;
+	text-transform:uppercase;
+	border-top:2px solid #59595a;
+	border-bottom:2px solid #59595a;	
+	padding:17px 15px;
+	text-align:center;
+	cursor:pointer;
+}
+#subscribe_newsletter_block {
+	height:80px;
+	padding-bottom:40px !important;
+}
+
+#subscribe-newsletter-thankyou {
+	font-size:15px;
+	font-weight:bold;
+	line-height:26px;
+}
+
+#contactUs-block .top-text {
+	font-size:18px;
+	font-weight:bold;
+}
+
+#contactUs-block .bottom-text {
+	font-size:34px;
+	font-weight:bold;
+}
+/* General Styles
+----------------------------------*/
+
+/* RD Page
+----------------------------------*/
+
+#rd-page h1{
+	color:#878788;
+	font-size:32px;
+	line-height:39px;
+	letter-spacing: -1.25px;
+	font-weight: 300;
+	padding-bottom: 20px;
+	padding-top: 30px;
+}
+
+#rd-page h3 {
+    color: #FCBC41;
+    font-size: 29px;
+    letter-spacing: -0.5px;
+    line-height: 42px;
+    padding-bottom: 25px;
+    padding-top: 27px;
+    text-align: center;
+}
+
+#rd-page p {
+	color: dimGray;
+	font-size: 14px;
+	line-height: 28px;
+	font-family: "Helvetica Neue",Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	margin-bottom:auto;
+}
+
+#rd-page h2 {
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: bold;
+	color: #333;
+	padding-top: 19px;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+}
+#rd-page ul{
+	padding-left: 20px;
+}
+#rd-page li {
+list-style-image: url("/wp-content/themes/reigndesign2011/images/icon-checkmark-black.png");
+background-repeat: no-repeat;
+color: #333;
+font-family: Georgia,"Bitstream Charter",serif;
+font-size: 14px;
+padding-top: 0;
+}
+#rd-page .inner-list li {
+	background-image: url("/wp-content/themes/reigndesign2011/images/details-bullet.png");
+	background-position: 0 11px;
+	list-style-image: none;
+	padding-left: 15px;
+}
+
+/* Search Page
+----------------------------------*/
+#search-page .entry-content {
+    line-height: 24px;
+    padding-left: 80px;
+}
+
+#search-page .entry-content p {
+	margin:0;
+}
+
+#search-page .entry-content li {
+	list-style: disc inside none;
+}
+
+
+
+/* Jobs Page
+----------------------------------*/
+#top {
+	height:251px; 
+	background:transparent;
+}
+#jobs-page {
+    background-image: url("/wp-content/themes/reigndesign2011/images/jobs-bkgd2.png");
+    background-position:top center;
+    background-repeat: repeat-x;
+    clear: both;
+    float: left;
+    width: 100%;
+	height: 1073px
+}
+#top-section {
+	clear: both;
+    float: left;
+    overflow: visible;
+    width: 100%;
+}
+
+#jobs-page #top-section > header {
+	padding-top:37px;
+	padding-bottom:14px;
+}
+
+#jobs-page h1 {
+	color:#878788;
+	font-size:34px;
+	line-height:42px;
+	letter-spacing: -1.25px;
+	font-weight: 300;
+}
+
+#jobs-page h2 {
+    color: #FCBC41;
+    font-size: 29px;
+    letter-spacing: -0.5px;
+    line-height: 42px;
+    padding-bottom: 25px;
+    padding-top: 27px;
+    text-align: center;
+}
+
+#pretty-people {
+/*    background: url("/wp-content/themes/reigndesign2011/images/jobs-images-bkgd.png") no-repeat scroll 0 0 transparent;*/
+    height: 519px;
+    width: 848px;
+	overflow:hidden;
+}
+
+#pretty-people li {
+	height: 519px;
+    width: 848px;
+}
+
+#why-lists {
+	float:left;
+	clear:both;
+	width:100%;
+}
+
+#why-lists h3 {
+	color:#414042;
+	font-size:17px;
+	line-height:22px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-weight:bold;
+	padding-bottom:16px;
+}
+
+#why-lists > div {
+	width:33%;
+	float:left;
+}
+
+#why-lists li {
+	width:230px;
+}
+
+#job-listings {
+
+	clear: both;
+    float: left;
+    width: 100%;
+    background-image: url("/wp-content/themes/reigndesign2011/images/section-bkgd.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+
+}
+
+.listings-content {
+	width:600px;
+	float:left;
+	clear:left;
+}
+
+
+#job-listings-title {
+    float: left;
+    padding-bottom: 24px;
+    padding-top: 53px;
+    width: 100%;
+}
+
+#job-listings-title h1 {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -3px -101px;
+    background-repeat: no-repeat;
+    clear: both;
+    color: transparent;
+    float: left;
+    font-size: 37px;
+    height: 29px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 145px;
+}
+
+.job-article > header {
+	padding-bottom:15px;
+}
+
+.job-article h2 {
+	font-size:34px;
+	color:#333;
+	line-height:39px;
+	letter-spacing:-1px;
+}
+
+.job-article section {
+	font-size:14px;
+	line-height:26px;
+	/*	color: #888;*/
+	color: #696969;
+
+	width:560px;
+	padding-bottom:50px;
+}
+
+.job-listings-posts {
+
+}
+
+#job-listings .listings-content {
+	width:580px;
+}
+
+#job-listings aside {
+	float:right;
+	clear:right;
+	width: 255px;
+}
+
+#job-listings header aside {
+
+}
+
+#job-listings .job-article h3 {
+	font-size:18px;
+	line-height:23px;
+	font-weight:bold;
+	color:#333;
+	padding-top: 8px;
+	padding-bottom:5px;
+	text-transform:uppercase;
+}
+
+#job-listings aside h3 {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -185px -100px;
+    background-repeat: no-repeat;
+    clear: both;
+    color: transparent;
+    font-size: 33px;
+    height: 29px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 145px;
+}
+
+.job-article p {
+}
+
+#job-listings a {
+    color: #FF9900;
+    font-weight: bold;
+}
+
+
+#job-listings a.selected,
+#job-listings a:hover {
+	color: #999999;
+}
+
+.job-article ul { 
+	padding-bottom:10px;
+}
+
+
+.job-article li,
+#why-lists li {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+    background-position: -529px -330px;
+    background-repeat: no-repeat;
+    color: #333333;
+    font-family: Georgia,"Bitstream Charter",serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 32px;
+    padding-top: 0;
+}
+
+#jobs-menu li {
+	padding-bottom:6px;
+}
+#jobs-menu li a {
+	line-height:24px;
+}
+
+.job-article li {
+	padding-bottom: 10px;
+}
+
+.job-article li li {
+	padding-bottom: 10px;
+	background:none;
+}
+
+/* Selectmenu
+----------------------------------*/
+.ui-selectmenu { 
+	display: block; position:relative; text-decoration: none; overflow:hidden;
+	width:230px !important
+}
+.ui-selectmenu-icon { position:absolute; right:6px; margin-top:-8px; top: 50%; }
+.ui-selectmenu-menu { padding:0; margin:0; list-style:none; position:absolute; top: 0; visibility: hidden; overflow: auto; }
+.ui-selectmenu-open { visibility: visible; }
+.ui-selectmenu-menu-popup { margin-top: -1px; }
+.ui-selectmenu-menu-dropdown { 
+    background-color: #ccc;
+    border: 1px solid #444444;
+    opacity: 0.9;
+    width: 229px !important;
+}
+.ui-selectmenu-menu li { padding:0; margin:0; display: block; border-top: 1px dotted transparent; border-bottom: 1px dotted transparent; border-right-width: 0 !important; border-left-width: 0 !important; font-weight: normal !important; }
+.ui-selectmenu-menu li a,.ui-selectmenu-status {
+	display:block; 
+/*	padding:.3em 13px;*/
+	outline:none; 
+	text-decoration:none; 
+}
+.ui-selectmenu-menu li a {
+    font-size: 13px;
+    padding: 5px 13px;
+	color: #333333 ;
+}
+
+.ui-selectmenu-menu li.ui-selectmenu-hasIcon a,
+.ui-selectmenu-hasIcon .ui-selectmenu-status { 
+	padding-left: 20px; 
+	position: relative;
+	margin-left: 5px;
+}
+.ui-selectmenu-menu li .ui-icon, .ui-selectmenu-status .ui-icon { position: absolute; top: 1em; margin-top: -8px; left: 0; }
+.ui-selectmenu-status {
+    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+    background-position: -778px -367px;
+    background-repeat: no-repeat;
+}
+.ui-selectmenu-open li.ui-selectmenu-item-focus a { 
+	background: #efa930; 
+	color:#333;
+}
+.ui-selectmenu-open li.ui-selectmenu-item-selected { }
+.ui-selectmenu-menu li span,.ui-selectmenu-status span { 
+	display:block; 
+	margin-bottom: .2em; 
+}
+.ui-selectmenu-menu li .ui-selectmenu-item-header { font-weight: bold; }
+.ui-selectmenu-menu li .ui-selectmenu-item-content {  }
+.ui-selectmenu-menu li .ui-selectmenu-item-footer { opacity: .8; }
+/*for optgroups*/
+.ui-selectmenu-menu .ui-selectmenu-group { font-size: 1em; }
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label { line-height: 1.4em; display:block; padding:.6em .5em 0; font-weight: bold; }
+.ui-selectmenu-menu .ui-selectmenu-group ul { margin: 0; padding: 0; }
+
+
+/*-----------------------------------------------
+jcarousel skin
+-----------------------------------------------*/
+.jcarousel-skin-tango .jcarousel-container {
+/*    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+   border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;*/
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+/*    width: 245px;
+    padding: 20px 40px;*/
+}
+
+.jcarousel-skin-tango .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+/*    width:  245px;
+    height: 75px;*/
+	width:840px;
+}
+
+#pretty-people .jcarousel-skin-tango .jcarousel-clip-horizontal {
+	width:849px;
+}
+
+
+#job-listings .jcarousel-skin-tango .jcarousel-clip-horizontal {
+	width:592px;
+/*	height:800px;*/
+	height:1100px;
+}
+
+.jcarousel-skin-tango .jcarousel-item {
+/*    width: 75px;
+    height: 75px;*/
+	width:840px;
+}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/*-----------------------------------------------
+ *  Horizontal Buttons
+ -----------------------------------------------*/
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 175px;
+    right: -30px;
+    width: 88px;
+    height: 22px;
+    cursor: pointer;
+    /*background: transparent url('/wp-content/themes/reigndesign2011/images/next.png') no-repeat 0 0;*/
+	background: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-repeat:no-repeat;
+	background-position: -390px -16px;	
+	visibility: hidden;
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-horizontal:focus {
+	background: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -390px -43px;	
+}
+
+/*.jcarousel-skin-tango .jcarousel-next-horizontal:active {
+	background: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -390px -68px;	
+}*/
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 175px;
+    left: -30px;
+    width: 88px;
+    height: 22px;
+    cursor: pointer;
+	background-image: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-repeat:no-repeat;
+	background-position: -289px -16px;
+	visibility: hidden;
+}
+
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover, 
+.jcarousel-skin-tango .jcarousel-prev-horizontal:focus {
+	/*background: transparent url('/wp-content/themes/reigndesign2011/images/previous-mouse-over.png') no-repeat 0 0;*/
+	background-image: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -289px -43px;
+}
+
+/*.jcarousel-skin-tango .jcarousel-prev-horizontal:active {
+	background-image: url('/wp-content/themes/reigndesign2011/images/atlas-home.png');
+	background-position: -289px -68px;
+}
+*/
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+}
+
+
+header, nav, article, section, footer, address {  
+    display: block;  
+}
+
+
+
+
+/*- MOBILE
+---------------------------------------------------------------*/
+@media screen and (max-width:480px){
+	/*------------------------blog---------------------------*/
+
+	#blog-list .chalkboard,
+	#post .chalkboard,
+	#rd-page .chalkboard,
+	#jobs .chalkboard {
+	    background-image: url("/wp-content/themes/reigndesign2011/images/bkgd-post-header.jpg");
+	    background-position: center top;
+	    background-repeat: no-repeat;
+	    background-size: 1195px 231px;
+	    height: 200px;
+	    position: absolute;
+	    width: 100%;
+	}
+	#blog-list #header-image-blog, 
+	#rd-page #header-image-blog, 
+	#post #header-image-blog, 
+	#jobs #header-image-blog {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -186px -3px;
+	height: 97px;
+	position: relative;
+	top: 50px;
+	width: 146px;
+	cursor: pointer;
+	margin:auto;
+	}
+	#blog-list #header-image-rd, 
+	#rd-page #header-image-rd, 
+	#post #header-image-rd, 
+	#jobs #header-image-rd {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -343px -1px;
+	height: 35px;
+	position: relative;
+	top: 35px;
+	width: 143px;
+	cursor: pointer;
+	margin:auto;
+	}
+	#blog-list #header-image-jobs, 
+	#rd-page #header-image-jobs, 
+	#post #header-image-jobs, 
+	#jobs #header-image-jobs {
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-blogJob.png");
+	background-position: -3px -3px;
+	cursor: pointer;
+	height: 97px;
+	position: relative;
+	top: 50px;
+	width: 155px;
+	margin:auto;
+	}
+	#blog-list .overlay, 
+	#rd-page .overlay, 
+	#post .overlay, 
+	#jobs .overlay {
+	background-image: url("/wp-content/themes/reigndesign2011/images/post-background.png");
+	background-position: center top;
+	background-repeat: repeat-x;
+	background-size: 80% 60%;
+	height: 354px;
+	position: absolute;
+	width: 100%;
+	}
+	
+	#blog-list .wrapper,
+	#post .wrapper,
+	#jobs .wrapper{
+		width:90%;
+		margin:0 5%;
+	}
+	
+	
+	#job-listings aside {
+		display:none;
+	}
+	#top-section{
+		padding-left: 0px;
+	}
+	#jobs-page #top-section > header {
+		display:none;
+	}
+	#jobs-page {
+		background-image:none;
+		height: 830px;
+	}
+	#jobs #pretty-people {
+		display:none;
+	}
+	#jobs-page h2 {
+	font-size: 22px;
+	line-height:25px;
+	padding-bottom: 0px;
+	}
+	#why-lists > div{
+		width: 100%;
+		float: left;
+	}
+	#why-lists li{
+		width:270px;
+	}
+	#why-lists h3 {
+		font-size:13px;
+		line-height:22px;
+		padding-bottom: 5px;
+		padding-top: 20px;
+	}
+	#blog-list .header, 
+	#post .header,
+	#jobs .header, 
+	#rd-page .header {
+	width: 100%;
+	height: 200px;
+	}
+	#jobs-page #top-section > header {
+	padding-top: 20px;
+	padding-bottom: 14px;
+	}
+	#jobs-page h1 {
+	font-size: 21px;
+	line-height: 24px;
+	}
+	.wrapper {
+		margin: 0px;
+		width: 100%;
+	}
+	#post #site-menu, #blog-list #site-menu, #rd-page #site-menu, #jobs #site-menu {
+	position: relative;
+	top: 12px;
+	width: 100%;
+	}
+	
+	#post #site-menu ul li,
+	#blog-list #site-menu ul li,
+	#rd-page #site-menu ul li,
+	#jobs #site-menu ul li{ 
+    	width:30%;
+	}
+	
+	#post #site-menu .item-small,
+	#blog-list #site-menu .item-small,
+	#rd-page #site-menu .item-small,
+	#jobs #site-menu .item-small{
+		width:19%;
+	}
+	
+	#job-listings-title {
+		padding-bottom: 14px;
+		padding-top: 25px;
+	}
+	#job-listings-title h1 {
+		width: 120px;
+		margin-left: 85px;
+	}
+	#job-listings .listings-content {
+		width: 100%;
+	}
+	#job-listings .jcarousel-skin-tango .jcarousel-clip-horizontal {
+		width: 450px;
+		height: 800px;
+	}
+	.job-article section {
+		width: 290px;
+	}	
+	#job-listings .job-article h3 {
+		font-size: 13px;
+		line-height: 22px;
+		padding-bottom: 5px;
+	}
+	.job-article > header {
+		padding-bottom: 7px;
+		padding-top: 37px;
+	}
+	.job-article h2 {
+		font-size: 24px;
+		line-height: 22px;
+	}
+	#job-listings .jcarousel-skin-tango .jcarousel-item {
+		height: 900px;
+	}
+	#job-listings .jcarousel-skin-tango .jcarousel-prev-horizontal {
+	    top:0px;
+	    left: 0px;
+		visibility: visible;
+		background-image:url('/wp-content/themes/reigndesign2011/images/previous-job.png');
+		background-position: 0px 0px;
+		width: 110px;
+	}
+
+	#job-listings .jcarousel-skin-tango .jcarousel-next-horizontal {
+	    top:0px;
+	    right: 0px;
+		visibility: visible;
+		background-image:url('/wp-content/themes/reigndesign2011/images/next-job.png');
+		background-position: 0px 0px;
+		width: 107px;
+	}
+	#job-listing .jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+	#job-listing .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+	#job-listing .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:focus,
+	#job-listing .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active,
+	#job-listings .jcarousel-skin-tango .jcarousel-next-horizontal:active, 
+	#job-listings .jcarousel-skin-tango .jcarousel-next-horizontal:hover,
+	#job-listings .jcarousel-skin-tango .jcarousel-next-horizontal:focus {
+		background: url('/wp-content/themes/reigndesign2011/images/next-job.png');
+		background-position: 0px -27px;	
+	}
+	#job-listings .jcarousel-skin-tango .jcarousel-prev-horizontal:active, 
+	#job-listings .jcarousel-skin-tango .jcarousel-prev-horizontal:hover,
+	#job-listings .jcarousel-skin-tango .jcarousel-prev-horizontal:focus {
+		background: url('/wp-content/themes/reigndesign2011/images/previous-job.png');
+		background-position: 1px -27px;	
+	}
+	/* ----- pages footer------*/
+	#footer-small{
+		display:table;
+		margin: auto;
+		padding-top:110px;
+	}
+	#footer-content{
+		display:none;
+	}
+	#footer-small header h2 {
+			display:none;
+		}
+	
+	#bottom-overlay{
+		height:550px;
+	}
+	#bottom-overlay .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	#footer-small .section-header h1{
+		
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -590px -302px;
+		height: 0px;
+		width: 200px;
+		clear: left;
+		padding-top: 18px;
+		padding-bottom: 32px;
+		position: relative;
+		margin: auto;
+	}
+	#footer-small .dotted-line1 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+	}
+
+	#footer-small .dotted-line2 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:63px;
+	}
+
+	#footer-small .dotted-line3 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:126px;
+	}
+
+	#footer-small .dotted-line4 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:260px;
+	}
+
+	#footer-small .title { 
+		color: #dfdfdf;
+		font-size: 17px;
+		line-height: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	#footer-small .contact-content-small-text{
+			padding-top:22px;
+	}
+			
+	#footer-small .detail { 
+		 color: #8c8d8e;
+		 font-size: 13px;
+	     padding-left:8px;
+	}
+
+	.social-buttons {
+			display: block;
+			float: left;
+			position: relative;
+			top: 24px;
+			left: 70px;
+	}
+
+	.social-buttons .linkedIn {
+		margin-right:8px;
+		background-position: -10px -11px	
+	}
+	.social-buttons .twitter {
+		margin-right:8px;
+		background-position: -61px -11px;
+	}
+	.social-buttons .facebook {
+		background-position: -114px -11px;
+	}
+	footer#footer {
+		height:45px;
+	}
+		/*-----------------------footer---------------------------*/
+	#footer #site-info {
+			background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+			background-position: 0px -353px;
+			background-repeat: no-repeat;
+			height: 30px;
+			position: relative;
+			top:10px;
+			width: 40px;
+/*			left: 134px;*/
+			margin:0 auto;
+			/*iphone retina*/
+	}
+
+	#site-generator {
+			display:none;
+	}
+	/*--------------------------- blog specific -----------------------*/
+	#blog-list .loop-content article aside, 
+	#post .post-content article aside {
+		display:none;
+	}
+	#blog-list .loop-content article > section, 
+	#post .post-content article > section {
+		float: left;
+		width: 100%;
+		padding-bottom: 5px;
+	}
+	#blog-list .loop-content h1, 
+	.post-content h1, 
+	.entry-title a:link, 
+	.entry-title a:visited {
+	font-size: 22px;
+	line-height: 25px;
+	}
+	#blog-list .loop-content h1, 
+	#post .post-content h1, 
+	h2.entry-title {
+	padding-bottom: 10px !important;
+	font-size: 19px;
+	line-height: 25px;
+	}
+	.hentry {
+	margin: 0 0 18px 0;
+	}
+	.entry-content, 
+	.entry-summary {
+	color: dimGray;
+	font-size: 12px;
+	line-height: 25px;
+	}
+	.comment-link:link, 
+	.comment-link:visited {
+	font-size: 11px;
+	line-height: 15px;
+	}
+	.entry-meta {
+	font-size: 11px;
+	height: 16px;
+	}
+	#primary {
+	display:none;
+	}
+	#nav-below {
+	padding-bottom: 0px;
+	}
+	#blog-list .loop-content, 
+	#post .post-content {
+		width: 100%;
+	}
+
+	.nav-links {
+		float: right;
+		overflow: hidden;
+		padding-right:0px;
+		width: 100%;
+	}
+	h3#comments-title, h3#reply-title {
+		font-size: 24px;
+		line-height: 25px;
+	}
+	h3#reply-title {
+	margin-top: 18px;
+	margin-bottom: 5px;
+	}
+	/*--------------------single post-----------------------*/
+	.nav-post {
+	margin: 0px;
+	}
+	#respond {
+		margin: 0px;
+	}
+	#comments-block-right textarea {
+		width: 100%;
+		height: 104px;
+		margin: 0;
+	}
+	.commentlist .avatar, .commentlist .photo {
+		display:none;
+	}
+	.commentlist li.comment {
+		line-height: 24px;
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+	}
+	h3#comments-title {
+		padding: 0px;
+		margin-top: 18px;
+		margin-bottom: 1px;
+	}
+	.nav-links {
+		width: 74%;
+		margin: auto;
+		float:center;
+		padding-right:0px;
+	}				
+	.navigation a:link, .navigation a:visited {
+		font-size: 12px;
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+	}
+/*-----------------------header---------------------------*/
+
+	#home {
+			height:478px;
+			background-image:none;
+		}
+
+		#home .chalkboard {
+		    background-image: url("/wp-content/themes/reigndesign2011/images/mobile-bg1.jpg");
+			background-position: 0px 0px;
+		    background-repeat: repeat-x;
+			background-size:auto;
+		    height: 470px;
+		    position: absolute;
+		    width: 100%;
+		}
+		
+	#home .chalkboard-logo {
+		background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		background-position: 0px 450px;
+		height: 36px;
+	    width: 207px;
+		top: 40px;
+		position: relative;
+		margin:auto;
+	}
+	
+	#home .wrapper {
+		width:100%;
+	}
+
+	
+	#home .chalkboard-slogan {
+		max-height: 158px;
+		width:90%;
+		margin:0 5%;
+		top:315px;
+	}
+	
+	#home .chalkboard-slogan img {
+		max-height: 158px;
+		width:100%;
+	}
+	
+	
+	#home .chalkboard-menu-small {
+		display:block;
+		top:0px;
+		left:0px;
+	}
+
+	
+/*-----------------------menus---------------------------*/	
+
+	#site-menu  { 
+    	position: absolute;
+		top: 0px;
+		right:auto;
+		top: 6px;
+		width:100%;
+		margin:0px;
+		padding:0px;
+	}
+	#site-menu ul{ 
+    	float:none;
+		margin:auto;
+	}
+	#site-menu ul li{ 
+    	width:19%;
+		line-height:9px;
+		border-right: 1px solid #555;
+		padding:0px;
+	}
+	#site-menu .last-item {
+		width:40%;
+	}
+	#site-menu .last-item .truncate {
+	    display:none;
+	}
+	#site-menu .before-last-item{
+		border-right:none;
+		padding-right:none;
+	}
+	.menu-small{
+		background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		background-position: 0px -117px;
+		height: 32px;
+		width: 29px;
+		position:absolute;
+		top: 13px;
+		right: 0px;
+		
+	}
+	.page-menu {
+		display:none;
+	}
+	
+	#home .page-menu {
+		display:block;
+		float:center;
+		position:absolute;
+		top:90px;
+		width:100%;
+			
+	}
+
+	#home .page-menu  ul {  
+
+	    height: 22px;
+	    list-style: none outside none;
+	    margin: auto 0;
+	    width: 100%;
+		
+	}
+	#home .page-menu .menu-home{
+		
+		display:none;
+	}
+	#home .page-menu  ul li {  
+	margin:auto;
+	margin-top:16px;
+	float:center;
+	height: 33px;
+	width:126px;
+	background-repeat:repeat-x;
+	padding-left:0px;
+	}
+	#home .page-menu-services {  
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position:-875px -431px;
+	}
+	#home .page-menu-port {  
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position:-875px -480px;
+	}
+	
+	#home .page-menu-process {  
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position:-875px -531px;
+	}
+	#home .page-menu-team {  
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position:-875px -579px;
+	}
+	#home .page-menu-contact {  
+	background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	background-position:-875px -629px;
+	}
+	#home .page-menu span {  
+	    cursor: pointer;
+	    display: block;
+	    font-size: 0pt;
+	    letter-spacing: -0.25px;
+	    text-align: center;
+	    text-decoration: none;
+		color:#fcfcfc;
+		line-height:10px;
+		font-weight:normal;
+		padding-top:17px;
+	}
+
+	#home .page-menu span:hover {
+		color:#fab91c;
+	}
+	
+/*-----------------------layout---------------------------*/
+	.section-header h2{
+		font-size:14px;
+		padding-bottom:9px;
+		padding-top:0px;
+	}
+	.section-header {
+		padding-bottom: 0px;
+		padding-top:17px;
+	}
+	
+/*-----------------------news items---------------------------*/
+	#featured {
+		display:none;
+	}
+	
+	
+	
+	/*-----------------------services---------------------------*/
+	/*adjust section height*/
+	#services {
+		height:442px;
+		background-position: center 0px;
+	}
+	/*adjust section width*/
+	#services .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	/*hide/show content*/
+	#services .section-content {
+		display:none;
+	}
+	
+	#services .section-content-small {
+		display:block;
+		width:110%;
+	}
+	.services-column {
+		display:table;
+		width:135px;
+		float:left;
+		margin-right: 10px;
+	}
+	.services-column h1 {
+	    color: #333;
+	    font-size: 10px;
+	    font-weight: bold;
+	    line-height: 12px;
+		height:28px;
+	    margin: 0;
+	    text-transform: uppercase;
+	}
+	
+	#services figcaption {
+		color: #696969;
+	    font-size: 11px;
+	    line-height: 14px;
+		letter-spacing:0.50px;
+		display:block;
+		height:40px;
+	}
+	.services-column figure {
+		margin:0;
+	}
+
+	#services figure img {
+	    height: 89px;
+	    width: 140px;
+		padding-bottom: 6px;
+	}
+	
+	.services-column *{
+		display:block;
+		width:140px;
+	}
+	
+	#services .services-column article {
+		display:block;
+		clear:both;
+	}
+	
+
+	/*-----------------------portfolio---------------------------*/
+	/*adjust section height*/
+	#portfolio {
+		height:auto;
+	}
+	/*adjust section width*/
+	#portfolio .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	/*hide/show content*/
+	#portfolio .section-content {
+		display:none;
+	}
+	
+	#portfolio .section-content-tiny {
+		display:block;
+	}
+	.portfolio-sample {
+		height: 350px;
+		width: 290px;
+		background-position:0 0;
+	}
+	.portfolio-template-C .portfolio-description{
+		width: 275px;
+		padding-bottom: 0px;
+		top: 260px;
+		height:80px;
+		vertical-align:bottom;
+	}
+	.portfolio-template-C .portfolio-description h1 {
+		padding-left: 0px;
+		font-size:18px;
+		padding-bottom: 5px;
+		line-height:20px;
+		bottom:0px;
+		height:auto;
+	}
+	.portfolio-template-C footer {
+		float: left;
+		width: 287px;
+		margin-top:-45px;
+	}
+	
+	.portfolio-text {
+		height: 90px;
+		padding-top: 260px;
+	}
+	/*	carousel	*/
+	.jcarousel-skin-tango .jcarousel-clip {
+	    overflow: hidden;
+		top:25px;
+	/*	padding-top:4px;*/
+	}
+	.jcarousel-skin-tango .jcarousel-item{
+		height:350px;
+	}
+	.jcarousel-skin-tango .jcarousel-prev-horizontal {
+	    top:0px;
+	    left: 0px;
+		visibility: visible;
+	   
+	}
+	
+	.jcarousel-skin-tango .jcarousel-next-horizontal {
+	    top:0px;
+	    right: 0px;
+		visibility: visible;
+	   
+	}
+	
+	.sample-buttons a {
+		margin-left:0px;
+	}
+	/*-----------------------process---------------------------*/
+	/*adjust section height*/
+	#process {
+		height:1135px;
+	}
+	/*adjust section width*/
+	#process .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	.section-table {
+		width:auto
+	}
+	
+	#process .section-content {
+		display:none;
+	}
+	#process .section-content-small {
+		display:block;
+	}
+	#process .section-row *{
+		
+		margin: 0 2.8%;
+		
+	}
+	#process .process-arrow{
+		
+		background-image: url("/wp-content/themes/reigndesign2011/images/process-arrow.png");
+		background-position: 0px 0px;
+		height:123px;
+		width:290px;
+		margin: 0;
+	}
+	.es #process .process-arrow {
+	    background-image: url("/wp-content/themes/reigndesign2011/es/process-arrow.png");
+	}
+	.zh #process .process-arrow {
+	    background-image: url("/wp-content/themes/reigndesign2011/zh/process-arrow.png");
+	}
+	#process .steps .section-cell-0 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: 0px -394px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+		padding-left: 22px;
+	}
+	
+	#process .steps .section-cell-1 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: -289px  -394px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+	    padding-left: 22px;
+	}
+	
+	#process .steps .section-cell-2 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: -577px -394px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+	    padding-left: 22px;
+	}
+	
+	#process .steps .section-cell-3 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: 0px -543px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+	    padding-left: 22px;
+	}
+	
+	#process .steps .section-cell-4 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: -289px -543px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+	    padding-left: 22px;
+	}
+	
+	#process .steps .section-cell-5 {
+	   background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: -577px -543px;
+	    background-repeat: no-repeat;
+	    height: 145px;
+		width: 265px;
+	    padding-left: 22px;
+	}
+	
+	#process .steps{
+		
+		padding-bottom:0;
+	}
+	
+	/*-----------------------team---------------------------*/
+	/*adjust section height*/
+	#team {
+		height:1720px;
+		background-image:url('/wp-content/themes/reigndesign2011/images/section-team-bkgd-small_1720.png');
+		background-size:320px 1720px;
+	}
+	/*adjust section width*/
+	#team .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	#team .section-content {
+		display:none;
+	}
+	#team .section-content-small {
+		display:block;
+	}
+	tr{
+		float: left;
+		width: 100%;
+	}
+	#team .td {
+		width:143px;
+		padding-bottom: 20px;
+		float:left;
+	}
+	#team .brady{
+		background-position: -10px -434px;
+		background-size: 115%;
+		
+	}
+	#team .placeholder {
+	    padding-left:20px;
+	}
+	#team .person-name {
+	font-size: 11px;
+	}
+
+	#team .section-content-cell  figure div {
+		background-position: 0px -420px;
+		background-size: 100%;
+	}
+	#team .nonperson {
+	    width:350px;
+	    overflow:hidden;
+	}
+	#team .nonperson {
+	    white-space:nowrap;
+	}
+	#team .nonperson figure div {
+	background-position: -10px -6px;
+	background-size: 100%;
+	vertical-align:top;
+	}
+	/*-----------------------contact---------------------------*/
+	
+	#contact {
+		height:493px;
+	}
+	#contact .section-content {
+		display:none;
+	}
+	#contact .section-content-small {
+		display:block;
+	}
+	#contact header h2 {
+		display:none;
+	}
+	#contact .wrapper {
+		width:90%;
+		margin:0 5%;
+	}
+	
+	#contact .dotted-line1 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+	}
+	
+	#contact .dotted-line2 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:63px;
+	}
+	
+	#contact .dotted-line3 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:126px;
+	}
+	
+	#contact .dotted-line4 { 
+		 background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+		 background-position: -239px -359px;
+		 background-repeat: no-repeat;
+		 position: relative;
+		 height: 5px;
+		 width: 280px;
+		 top:260px;
+	}
+	
+	#contact .title { 
+		color: #dfdfdf;
+		font-size: 17px;
+		line-height: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	#contact .contact-content-small-text{
+		
+		padding-top:22px;
+	}
+	#contact .detail { 
+		 color: #8c8d8e;
+		 font-size: 13px;
+		padding-left:8px;
+	}
+	
+	.social-buttons {
+		display: block;
+		float: left;
+		position: relative;
+		top: 24px;
+		left: 70px;
+	}
+	
+	.social-buttons .linkedIn {
+	margin-right:8px;
+	background-position: -10px -11px	
+	}
+	.social-buttons .twitter {
+	margin-right:8px;
+	background-position: -61px -11px;
+	}
+	.social-buttons .facebook {
+		background-position: -114px -11px;
+	}
+	footer#footer {
+		background-image: url('/wp-content/themes/reigndesign2011/images/footer-bkgd-small.jpg');
+		background-position:0px 0px;
+		background-repeat:repeat-x;
+		height:47px;
+	}
+	/*-----------------------footer---------------------------*/
+	#site-info {
+	    background-image: url("/wp-content/themes/reigndesign2011/images/atlas-home.png");
+	    background-position: 0px -350px;
+	    background-repeat: no-repeat;
+	    height: 34px;
+	    position: relative;
+	    bottom: 5px;
+	    width: 40px;
+		left:138px;
+	}
+}
+.selected-language {
+    font-weight:bold;
+    color:#B8BAC0;
+}
+#langbanner {
+    background-color:#ffa; margin:0; height:25px; padding-top:5px; font-size:16px; text-align:center;
+}
+#langbanner a {
+    display:block; color:#66f;
+}
+.es .section-header h1 ,
+.es #home .chalkboard-logo ,
+.es .featured-image,
+.es .portfolio-list li ,
+.es .sample-buttons a ,
+.es #process .section-content ,
+.es .process-list li ,
+.es #contact .up-arrow ,
+.es .social-buttons a ,
+.es .social-buttons .facebook ,
+.es #contact form p.required-field ,
+.es #contact input[type="submit"],
+.es #footer-content input[type="submit"],
+.es #site-info ,
+.es .ui-selectmenu-status ,
+.es .jcarousel-skin-tango .jcarousel-next-horizontal,
+.es .jcarousel-skin-tango .jcarousel-next-horizontal:focus ,
+.es .jcarousel-skin-tango .jcarousel-prev-horizontal,
+.es .jcarousel-skin-tango .jcarousel-prev-horizontal:hover,
+.es .jcarousel-skin-tango .jcarousel-prev-horizontal:focus,
+.es #footer-small .section-header h1,
+.es #footer-small .dotted-line1  ,
+.es #footer-small .dotted-line2  ,
+.es #footer-small .dotted-line3  ,
+.es #footer-small .dotted-line4  ,
+.es #footer #site-info ,
+.es #home .chalkboard-logo ,
+.es .menu-small,
+.es #home .page-menu-services   ,
+.es #home .page-menu-port   ,
+.es #home .page-menu-process   ,
+.es #home .page-menu-team   ,
+.es #home .page-menu-contact   ,
+.es #process .steps .section-cell-0 ,
+.es #process .steps .section-cell-1 ,
+.es #process .steps .section-cell-2 ,
+.es #process .steps .section-cell-3 ,
+.es #process .steps .section-cell-4 ,
+.es #process .steps .section-cell-5 ,
+.es #contact .dotted-line1  ,
+.es #contact .dotted-line2  ,
+.es #contact .dotted-line3  ,
+.es #contact .dotted-line4  ,
+.es #site-info 
+ {
+background-image: url("/wp-content/themes/reigndesign2011/es/atlas-home.png");
+}
+.zh .section-header h1 ,
+.zh #home .chalkboard-logo ,
+.zh .featured-image,
+.zh .portfolio-list li ,
+.zh .sample-buttons a ,
+.zh #process .section-content ,
+.zh .process-list li ,
+.zh #contact .up-arrow ,
+.zh .social-buttons a ,
+.zh .social-buttons .facebook ,
+.zh #contact form p.required-field ,
+.zh #contact input[type="submit"],
+.zh #footer-content input[type="submit"],
+.zh #site-info ,
+.zh .ui-selectmenu-status ,
+.zh .jcarousel-skin-tango .jcarousel-next-horizontal,
+.zh .jcarousel-skin-tango .jcarousel-next-horizontal:focus ,
+.zh .jcarousel-skin-tango .jcarousel-prev-horizontal,
+.zh .jcarousel-skin-tango .jcarousel-prev-horizontal:hover,
+.zh .jcarousel-skin-tango .jcarousel-prev-horizontal:focus,
+.zh #footer-small .section-header h1,
+.zh #footer-small .dotted-line1  ,
+.zh #footer-small .dotted-line2  ,
+.zh #footer-small .dotted-line3  ,
+.zh #footer-small .dotted-line4  ,
+.zh #footer #site-info ,
+.zh #home .chalkboard-logo ,
+.zh .menu-small,
+.zh #home .page-menu-services   ,
+.zh #home .page-menu-port   ,
+.zh #home .page-menu-process   ,
+.zh #home .page-menu-team   ,
+.zh #home .page-menu-contact   ,
+.zh #process .steps .section-cell-0 ,
+.zh #process .steps .section-cell-1 ,
+.zh #process .steps .section-cell-2 ,
+.zh #process .steps .section-cell-3 ,
+.zh #process .steps .section-cell-4 ,
+.zh #process .steps .section-cell-5 ,
+.zh #contact .dotted-line1  ,
+.zh #contact .dotted-line2  ,
+.zh #contact .dotted-line3  ,
+.zh #contact .dotted-line4  ,
+.zh #site-info 
+ {
+background-image: url("/wp-content/themes/reigndesign2011/zh/atlas-home.png?5");
+}
+
+
+/* chinese font tweaks */
+.zh #process .steps h1 {
+    font-size:18px;
+}
+.zh .section-header h2 {
+    font-size:19px;
+    padding-top:4px;
+    letter-spacing:0.5px;
+}
+.zh .featured-text-subtitle {
+    padding-top:1px;
+    font-size: 12px;
+    letter-spacing: -0.25pt;
+    line-height: 15px;
+}
+.zh .services-column h1 {
+    font-size:20px;
+}
+.zh #process .steps h1 {
+    line-height:26px;
+}

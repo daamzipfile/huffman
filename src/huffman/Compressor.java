@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+
 /**
  *
  * @author RickyWahyudi
@@ -43,7 +44,8 @@ public class Compressor {
             array[i] = 0;
         }
         for (int i = 0; i < data.length; i++) {
-            array[Byte.toUnsignedInt(data[i])]++;
+            
+            array[(int)data[i]+128]++;
         }
         huffman = array;
         int a = 0;
@@ -52,15 +54,16 @@ public class Compressor {
     //udah nge ngompress tapi dikit banget
     public void write(ArrayList<String> index, String namaFile) {
             try {
-                FileOutputStream fos = new FileOutputStream(namaFile+".mzip");
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                FileOutputStream oos = new FileOutputStream(namaFile+".mzip");
+               
                 String temp="";
                 for(int i=0;i<data.length;i++){
-                 temp += index.get(Byte.toUnsignedInt(data[i]));
-                 if(temp.length() > 32){
-                     
-                     oos.writeInt(Integer.parseInt(temp.substring(0, 31),2));
-                     temp=temp.substring(32, temp.length());
+                    
+                 temp += index.get(data[i]+128);
+                //  System.out.println(temp);
+                 if(temp.length() > 8){
+                     oos.write(Integer.parseInt(temp.substring(0, 8),2));
+                     temp=temp.substring(9, temp.length());
                  }
                 }
                
@@ -93,6 +96,20 @@ public class Compressor {
         // index2.get("nilai biner hufman dalam int") nanti return String asalnya
         ArrayList<String> index2 = man.IndexHuffmanComp(root);
         cs.write(index1, nama);
+        /**
+        Node[] X = new Node[10];
+        Huffman man = new Huffman();
+        for(int i=0;i<10;i++){
+        
+            X[i]= new Node(i+1,true,Integer.toBinaryString(i+1)); 
+        }
+        ArrayList<String> Z =man.IndexHuffmanComp(man.getPohon(X));
+        for(int i=1 ;i<11;i++){
+        
+        System.out.println(Z.get(i));
+        
+        }
+        */
     }
 
     public Node[] GetAllLeaf(String namaFile) throws IOException {
